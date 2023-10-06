@@ -1,0 +1,8 @@
+# OfferQueryBuildFromCatalogOfferingsHospitalityWrapper
+
+
+## Fields
+
+| Field                                                                                                                   | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `offerQueryBuildFromCatalogOfferingsHospitality`                                                                        | [OfferQueryBuildFromCatalogOfferingsHospitality](../../models/shared/offerquerybuildfromcatalogofferingshospitality.md) | :heavy_minus_sign:                                                                                                      | N/A                                                                                                                     |

@@ -1,0 +1,11 @@
+# Restrictions
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `atType`                                                                | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `documentType`                                                          | [DocumentTypeEnum](../../models/shared/documenttypeenum.md)             | :heavy_minus_sign:                                                      | Document type like EMD, MCO                                             | Ticket                                                                  |
+| `restriction`                                                           | *string*[]                                                              | :heavy_check_mark:                                                      | N/A                                                                     |                                                                         |
+| `travelerIdentifierRef`                                                 | [TravelerIdentifierRef](../../models/shared/traveleridentifierref.md)[] | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |

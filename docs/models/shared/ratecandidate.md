@@ -1,0 +1,13 @@
+# RateCandidate
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 | Example                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `atType`                                                    | *string*                                                    | :heavy_check_mark:                                          | N/A                                                         | RateCandidate                                               |
+| `chainCode`                                                 | *string*                                                    | :heavy_minus_sign:                                          | The hotel chain code                                        | HL                                                          |
+| `priority`                                                  | *number*                                                    | :heavy_minus_sign:                                          | rate candidate priority                                     |                                                             |
+| `propertyCode`                                              | *string*                                                    | :heavy_minus_sign:                                          | The hotel chain code                                        | HL12345                                                     |
+| `rateCategory`                                              | [RateCategoryEnum](../../models/shared/ratecategoryenum.md) | :heavy_minus_sign:                                          | Rate Category                                               |                                                             |
+| `rateCode`                                                  | *string*                                                    | :heavy_minus_sign:                                          | The rateCode to be applied to the request                   | HL123                                                       |

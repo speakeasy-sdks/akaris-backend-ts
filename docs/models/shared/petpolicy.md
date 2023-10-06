@@ -1,0 +1,11 @@
+# PetPolicy
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               | Example                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `atType`                                                                  | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       | PetPolicy                                                                 |
+| `description`                                                             | [TextTitleAndDescription](../../models/shared/texttitleanddescription.md) | :heavy_minus_sign:                                                        | Descriptive text                                                          |                                                                           |
+| `allowed`                                                                 | [YesNoUnknownEnum](../../models/shared/yesnounknownenum.md)               | :heavy_check_mark:                                                        | Yes , No , Unknown                                                        |                                                                           |
+| `policyCode`                                                              | *string*                                                                  | :heavy_minus_sign:                                                        | Pet policy code                                                           |                                                                           |

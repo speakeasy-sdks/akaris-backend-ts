@@ -1,0 +1,10 @@
+# Taxes
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `atType`                                                                       | *string*                                                                       | :heavy_check_mark:                                                             | N/A                                                                            | TaxesDetail                                                                    |
+| `taxInfo`                                                                      | [TaxInfo](../../models/shared/taxinfo.md)[]                                    | :heavy_minus_sign:                                                             | N/A                                                                            |                                                                                |
+| `totalTaxes`                                                                   | *number*                                                                       | :heavy_minus_sign:                                                             | A monetary amount, up to 4 decimal places. Decimal place needs to be included. | 330.1                                                                          |

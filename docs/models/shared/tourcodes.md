@@ -1,0 +1,10 @@
+# TourCodes
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `atType`                                                                | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     | TourCodes                                                               |
+| `tourCode`                                                              | [TourCode](../../models/shared/tourcode.md)                             | :heavy_check_mark:                                                      | Tour code                                                               |                                                                         |
+| `travelerIdentifierRef`                                                 | [TravelerIdentifierRef](../../models/shared/traveleridentifierref.md)[] | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |

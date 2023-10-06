@@ -1,0 +1,10 @@
+# VirtualTour
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 | Example                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `atType`                                                                    | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         | VirtualTour                                                                 |
+| `description`                                                               | [TextFree](../../models/shared/textfree.md)                                 | :heavy_minus_sign:                                                          | Textual information to provide descriptions and\/or additional information. |                                                                             |
+| `url`                                                                       | *string*                                                                    | :heavy_check_mark:                                                          | N/A                                                                         |                                                                             |

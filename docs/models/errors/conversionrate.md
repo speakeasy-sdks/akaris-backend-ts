@@ -1,0 +1,12 @@
+# ConversionRate
+
+A conversion metric from standard to another with the contextual authority such as IATA, OAG, ISO, etc.
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   | Example                                                                                       |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `rateAsOf`                                                                                    | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | Rate as of                                                                                    |                                                                                               |
+| `rateAuthority`                                                                               | *string*                                                                                      | :heavy_minus_sign:                                                                            | Rate authority                                                                                | ISO 4217                                                                                      |
+| `value`                                                                                       | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |                                                                                               |

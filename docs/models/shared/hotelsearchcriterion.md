@@ -1,0 +1,12 @@
+# HotelSearchCriterion
+
+
+## Fields
+
+| Field                                                           | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `atType`                                                        | *string*                                                        | :heavy_minus_sign:                                              | N/A                                                             | HotelSearchCriterion                                            |
+| `propertyRequest`                                               | [PropertyRequest](../../models/shared/propertyrequest.md)[]     | :heavy_check_mark:                                              | N/A                                                             |                                                                 |
+| `rateCandidates`                                                | [RateCandidates](../../models/shared/ratecandidates.md)         | :heavy_minus_sign:                                              | N/A                                                             |                                                                 |
+| `roomStayCandidates`                                            | [RoomStayCandidates](../../models/shared/roomstaycandidates.md) | :heavy_minus_sign:                                              | N/A                                                             |                                                                 |
+| `numberOfRooms`                                                 | *number*                                                        | :heavy_minus_sign:                                              | Number of rooms requested                                       |                                                                 |

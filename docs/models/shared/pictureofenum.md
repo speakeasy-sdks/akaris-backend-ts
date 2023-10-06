@@ -1,0 +1,24 @@
+# PictureofEnum
+
+
+## Values
+
+| Name             | Value            |
+| ---------------- | ---------------- |
+| `Exterior`       | Exterior         |
+| `Lobby`          | Lobby            |
+| `Pool`           | Pool             |
+| `Restaurant`     | Restaurant       |
+| `HealthClub`     | HealthClub       |
+| `GuestRoom`      | GuestRoom        |
+| `Suite`          | Suite            |
+| `ConferenceRoom` | ConferenceRoom   |
+| `Ballroom`       | Ballroom         |
+| `Golf`           | Golf             |
+| `Beach`          | Beach            |
+| `Spa`            | Spa              |
+| `Bar`            | Bar              |
+| `Recreational`   | Recreational     |
+| `RoomAmenity`    | RoomAmenity      |
+| `PopertyAmenity` | PopertyAmenity   |
+| `BusinessCentre` | BusinessCentre   |
