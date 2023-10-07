@@ -16,91 +16,74 @@ The Hotel Search by ID request searches for hotels by search by one or more prop
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { CreateResponse } from "akaris-backend/dist/sdk/models/operations";
 import { ImageSizeEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.searchHotel.create({
-  propertiesQuerySpecificPropertyListWrapper: {
-    propertiesQuerySpecificPropertyList: {
-      atType: "PropertiesQuerySpecificPropertyList",
-      propertyKey: [
-        {
-          atType: "Electric pirouette",
-          chainCode: "HL",
-          propertyCode: "Sausages ASCII",
-        },
-      ],
-      rateCandidates: {
-        atType: "RateCandidates",
-        rateCandidate: [
+  const res = await sdk.searchHotel.create({
+    propertiesQuerySpecificPropertyListWrapper: {
+      propertiesQuerySpecificPropertyList: {
+        atType: "PropertiesQuerySpecificPropertyList",
+        propertyKey: [
           {
-            atType: "RateCandidate",
             chainCode: "HL",
-            priority: 754558,
-            propertyCode: "HL12345",
-            rateCategory: RateCategoryEnum.Leisure,
-            rateCode: "HL123",
+            propertyCode: "Electric pirouette",
           },
         ],
-        postPayRatesOnlyInd: false,
-        prePayRatesOnlyInd: false,
-      },
-      roomStayCandidates: {
-        roomStayCandidate: [
-          {
-            guestCounts: {
-              atType: "GuestCounts",
-              guestCount: [
+        rateCandidates: {
+          atType: "RateCandidates",
+          rateCandidate: [
+            {
+              atType: "RateCandidate",
+              chainCode: "HL",
+              propertyCode: "HL12345",
+              rateCode: "HL123",
+            },
+          ],
+        },
+        roomStayCandidates: {
+          roomStayCandidate: [
+            {
+              guestCounts: {
+                atType: "GuestCounts",
+                guestCount: [
+                  {
+                    atType: "GuestCount",
+                    age: 21,
+                    ageQualifyingCode: "10",
+                    count: 2,
+                  },
+                ],
+              },
+              roomAmenity: [
                 {
-                  atType: "GuestCount",
-                  age: 21,
-                  ageQualifyingCode: "10",
-                  count: 2,
+                  inclusion: [
+                    "conglomeration",
+                  ],
+                  name: "24 hour Room Service",
+                  description: "WiFi",
                 },
               ],
             },
-            roomAmenity: [
-              {
-                atType: "4th connecting",
-                inclusion: [
-                  "Bespoke",
-                ],
-                name: "24 hour Room Service",
-                code: "Congo channels AGP",
-                description: "WiFi",
-                includedInd: false,
-                quantity: 373347,
-                surchargeInd: false,
-              },
-            ],
-          },
-        ],
+          ],
+        },
+        checkinDate: new RFCDate("2023-10-30"),
+        checkoutDate: new RFCDate("2022-06-05"),
+        numberOfGuests: 113158,
       },
-      checkinDate: new RFCDate("2022-02-20"),
-      checkoutDate: new RFCDate("2021-05-08"),
-      imageSize: ImageSizeEnum.Small,
-      maximumRate: 7587.04,
-      minimumRate: 4275.16,
-      numberOfGuests: 418992,
-      numberOfRooms: 285813,
-      requestedCurrency: "mesh",
-      returnAllImagesInd: false,
     },
-  },
-  traceId: "silver compressing Berkshire",
-  xauthTravelportAccessgroup: "neque mainstream",
-}).then((res: CreateResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -124,26 +107,24 @@ The optional Hotel Details request retrieves for one specified property a detail
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { GetPropertiesDetailResponse } from "akaris-backend/dist/sdk/models/operations";
 import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.searchHotel.getPropertiesDetail({
-  imageSize: ImageSizeEnum.Small,
-  traceId: "Barium haptic Lead",
-  xauthTravelportAccessgroup: "array Diverse Northwest",
-  chainCode: "payment East ah",
-  propertyCode: "transform Rustic",
-}).then((res: GetPropertiesDetailResponse) => {
+  const res = await sdk.searchHotel.getPropertiesDetail({
+    chainCode: "Road haptic",
+    propertyCode: "Vineland array",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -167,24 +148,23 @@ Hotel Search uses pagination by default. The initial search response returns 25 
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { GetPropertiesPageResponse } from "akaris-backend/dist/sdk/models/operations";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.searchHotel.getPropertiesPage({
-  traceId: "toothbrush",
-  xauthTravelportAccessgroup: "Cambridgeshire",
-  identifier: "synergies Executive female",
-  pageNumber: "quantifying Tesla",
-}).then((res: GetPropertiesPageResponse) => {
+  const res = await sdk.searchHotel.getPropertiesPage({
+    identifier: "toothbrush",
+    pageNumber: "Cambridgeshire",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -208,93 +188,77 @@ The Hotel Search by Location request searches for hotels by (a) geographic coord
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { SearchPropertiesResponse } from "akaris-backend/dist/sdk/models/operations";
 import { HotelSortOrderEnum, ImageSizeEnum, RateCategoryEnum, UnitOfDistanceEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.searchHotel.searchProperties({
-  propertiesQuerySearchWrapper: {
-    propertiesQuerySearch: {
-      atType: "PropertiesQuerySearch",
-      chainCodes: [
-        "Communications",
-      ],
-      checkInDate: new RFCDate("2022-01-14"),
-      checkOutDate: new RFCDate("2022-11-04"),
-      hotelName: "Clarita neural synthesize",
-      imageSize: ImageSizeEnum.Medium,
-      propertyAmenityCode: [
-        "Tricycle",
-      ],
-      rateCandidates: {
-        atType: "RateCandidates",
-        rateCandidate: [
-          {
-            atType: "RateCandidate",
-            chainCode: "HL",
-            priority: 163919,
-            propertyCode: "HL12345",
-            rateCategory: RateCategoryEnum.Corporate,
-            rateCode: "HL123",
-          },
+  const res = await sdk.searchHotel.searchProperties({
+    propertiesQuerySearchWrapper: {
+      propertiesQuerySearch: {
+        atType: "PropertiesQuerySearch",
+        chainCodes: [
+          "Communications",
         ],
-        postPayRatesOnlyInd: false,
-        prePayRatesOnlyInd: false,
-      },
-      requestedCurrency: "Sharable deploy Sports",
-      roomStayCandidate: [
-        {
-          guestCounts: {
-            atType: "GuestCounts",
-            guestCount: [
-              {
-                atType: "GuestCount",
-                age: 21,
-                ageQualifyingCode: "10",
-                count: 2,
-              },
-            ],
-          },
-          roomAmenity: [
+        checkInDate: new RFCDate("2022-01-14"),
+        checkOutDate: new RFCDate("2022-11-04"),
+        propertyAmenityCode: [
+          "Diesel",
+        ],
+        rateCandidates: {
+          atType: "RateCandidates",
+          rateCandidate: [
             {
-              atType: "Southeast Gloves array",
-              inclusion: [
-                "United",
-              ],
-              name: "24 hour Room Service",
-              code: "lime",
-              description: "WiFi",
-              includedInd: false,
-              quantity: 146819,
-              surchargeInd: false,
+              atType: "RateCandidate",
+              chainCode: "HL",
+              propertyCode: "HL12345",
+              rateCode: "HL123",
             },
           ],
         },
-      ],
-      searchBy: {
-        atType: "SearchBy",
-        searchRadius: {
-          unitOfDistance: UnitOfDistanceEnum.Kilometers,
-          value: 25,
+        roomStayCandidate: [
+          {
+            guestCounts: {
+              atType: "GuestCounts",
+              guestCount: [
+                {
+                  atType: "GuestCount",
+                  age: 21,
+                  ageQualifyingCode: "10",
+                  count: 2,
+                },
+              ],
+            },
+            roomAmenity: [
+              {
+                inclusion: [
+                  "Gasoline",
+                ],
+                name: "24 hour Room Service",
+                description: "WiFi",
+              },
+            ],
+          },
+        ],
+        searchBy: {
+          atType: "SearchBy",
+          searchRadius: {
+            value: 25,
+          },
         },
       },
-      sortOrder: HotelSortOrderEnum.StarRating,
-      returnAllImagesInd: false,
     },
-  },
-  traceId: "South",
-  xauthTravelportAccessgroup: "Wooden",
-}).then((res: SearchPropertiesResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -14,99 +14,75 @@ The Hotel Search by ID request searches for hotels by search by one or more prop
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { CreatePrecisionResponse } from "akaris-backend/dist/sdk/models/operations";
 import { ImageSizeEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.precisionSearchHotel.createPrecision({
-  propertiesQuerySpecificPrecisionPropertyListWrapper: {
-    propertiesQuerySpecificPrecisionPropertyList: {
-      atType: "PropertiesQuerySpecificPropertyList",
-      commissionableInd: false,
-      mealsIncluded: {
-        breakfastInd: false,
-        dinnerInd: false,
-        lunchInd: false,
-      },
-      propertyKey: [
-        {
-          atType: "City",
-          chainCode: "HL",
-          propertyCode: "Northeast",
-        },
-      ],
-      rateCandidates: {
-        atType: "RateCandidates",
-        rateCandidate: [
+  const res = await sdk.precisionSearchHotel.createPrecision({
+    propertiesQuerySpecificPrecisionPropertyListWrapper: {
+      propertiesQuerySpecificPrecisionPropertyList: {
+        atType: "PropertiesQuerySpecificPropertyList",
+        mealsIncluded: {},
+        propertyKey: [
           {
-            atType: "RateCandidate",
             chainCode: "HL",
-            priority: 694488,
-            propertyCode: "HL12345",
-            rateCategory: RateCategoryEnum.MultiDayPackage,
-            rateCode: "HL123",
+            propertyCode: "City",
           },
         ],
-        postPayRatesOnlyInd: false,
-        prePayRatesOnlyInd: false,
-      },
-      refundableInd: false,
-      roomStayCandidates: {
-        roomStayCandidate: [
-          {
-            guestCounts: {
-              atType: "GuestCounts",
-              guestCount: [
+        rateCandidates: {
+          atType: "RateCandidates",
+          rateCandidate: [
+            {
+              atType: "RateCandidate",
+              chainCode: "HL",
+              propertyCode: "HL12345",
+              rateCode: "HL123",
+            },
+          ],
+        },
+        roomStayCandidates: {
+          roomStayCandidate: [
+            {
+              guestCounts: {
+                atType: "GuestCounts",
+                guestCount: [
+                  {
+                    atType: "GuestCount",
+                    age: 21,
+                    ageQualifyingCode: "10",
+                    count: 2,
+                  },
+                ],
+              },
+              roomAmenity: [
                 {
-                  atType: "GuestCount",
-                  age: 21,
-                  ageQualifyingCode: "10",
-                  count: 2,
+                  inclusion: [
+                    "Music",
+                  ],
+                  name: "24 hour Room Service",
+                  description: "WiFi",
                 },
               ],
             },
-            roomAmenity: [
-              {
-                atType: "orchid",
-                inclusion: [
-                  "intangible",
-                ],
-                name: "24 hour Room Service",
-                code: "lavender naive",
-                description: "WiFi",
-                includedInd: false,
-                quantity: 380645,
-                surchargeInd: false,
-              },
-            ],
-          },
-        ],
+          ],
+        },
+        checkinDate: new RFCDate("2021-07-05"),
+        checkoutDate: new RFCDate("2023-01-31"),
+        numberOfGuests: 598172,
       },
-      smokingInd: false,
-      checkinDate: new RFCDate("2021-12-06"),
-      checkoutDate: new RFCDate("2023-05-08"),
-      imageSize: ImageSizeEnum.Thumbnail,
-      maximumRate: 3578.82,
-      minimumRate: 6203.38,
-      numberOfGuests: 123772,
-      numberOfRooms: 905681,
-      requestedCurrency: "synthesize Brand",
-      returnAllImagesInd: false,
     },
-  },
-  traceId: "kilogram longingly Cambridgeshire",
-  xauthTravelportAccessgroup: "Integration",
-}).then((res: CreatePrecisionResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -130,101 +106,78 @@ The Hotel Search by Location request searches for hotels by (a) geographic coord
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { PrecisionSearchPropertiesResponse } from "akaris-backend/dist/sdk/models/operations";
 import { HotelSortOrderEnum, ImageSizeEnum, RateCategoryEnum, UnitOfDistanceEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.precisionSearchHotel.precisionSearchProperties({
-  propertiesQueryPrecisionSearchWrapper: {
-    propertiesQuerySearch: {
-      atType: "PropertiesQuerySearch",
-      chainCodes: [
-        "Northwest",
-      ],
-      checkInDate: new RFCDate("2022-03-27"),
-      checkOutDate: new RFCDate("2022-02-02"),
-      commissionableInd: false,
-      hotelName: "Gender",
-      imageSize: ImageSizeEnum.Small,
-      mealsIncluded: {
-        breakfastInd: false,
-        dinnerInd: false,
-        lunchInd: false,
-      },
-      propertyAmenityCode: [
-        "female",
-      ],
-      rateCandidates: {
-        atType: "RateCandidates",
-        rateCandidate: [
-          {
-            atType: "RateCandidate",
-            chainCode: "HL",
-            priority: 943883,
-            propertyCode: "HL12345",
-            rateCategory: RateCategoryEnum.Vip,
-            rateCode: "HL123",
-          },
+  const res = await sdk.precisionSearchHotel.precisionSearchProperties({
+    propertiesQueryPrecisionSearchWrapper: {
+      propertiesQuerySearch: {
+        atType: "PropertiesQuerySearch",
+        chainCodes: [
+          "Northwest",
         ],
-        postPayRatesOnlyInd: false,
-        prePayRatesOnlyInd: false,
-      },
-      refundableInd: false,
-      requestedCurrency: "Fundamental copy defect",
-      roomStayCandidate: [
-        {
-          guestCounts: {
-            atType: "GuestCounts",
-            guestCount: [
-              {
-                atType: "GuestCount",
-                age: 21,
-                ageQualifyingCode: "10",
-                count: 2,
-              },
-            ],
-          },
-          roomAmenity: [
+        checkInDate: new RFCDate("2022-03-27"),
+        checkOutDate: new RFCDate("2022-02-02"),
+        mealsIncluded: {},
+        propertyAmenityCode: [
+          "Rubber",
+        ],
+        rateCandidates: {
+          atType: "RateCandidates",
+          rateCandidate: [
             {
-              atType: "male Cambridgeshire",
-              inclusion: [
-                "bulk",
-              ],
-              name: "24 hour Room Service",
-              code: "Cotton",
-              description: "WiFi",
-              includedInd: false,
-              quantity: 204092,
-              surchargeInd: false,
+              atType: "RateCandidate",
+              chainCode: "HL",
+              propertyCode: "HL12345",
+              rateCode: "HL123",
             },
           ],
         },
-      ],
-      searchBy: {
-        atType: "SearchBy",
-        searchRadius: {
-          unitOfDistance: UnitOfDistanceEnum.Miles,
-          value: 25,
+        roomStayCandidate: [
+          {
+            guestCounts: {
+              atType: "GuestCounts",
+              guestCount: [
+                {
+                  atType: "GuestCount",
+                  age: 21,
+                  ageQualifyingCode: "10",
+                  count: 2,
+                },
+              ],
+            },
+            roomAmenity: [
+              {
+                inclusion: [
+                  "capability",
+                ],
+                name: "24 hour Room Service",
+                description: "WiFi",
+              },
+            ],
+          },
+        ],
+        searchBy: {
+          atType: "SearchBy",
+          searchRadius: {
+            value: 25,
+          },
         },
       },
-      smokingInd: false,
-      sortOrder: HotelSortOrderEnum.Proximity,
-      returnAllImagesInd: false,
     },
-  },
-  traceId: "oddly system Customer",
-  xauthTravelportAccessgroup: "glistening Blues",
-}).then((res: PrecisionSearchPropertiesResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

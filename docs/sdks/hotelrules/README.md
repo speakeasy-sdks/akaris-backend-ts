@@ -15,67 +15,73 @@ To be deprecated and replaced with buildfromcatalogoffering
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { BuildFromCatalogOfferingsResponse } from "akaris-backend/dist/sdk/models/operations";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.hotelRules.buildFromCatalogOfferings({
-  offerQueryBuildFromCatalogOfferingsHospitalityWrapper: {
-    offerQueryBuildFromCatalogOfferingsHospitality: {
-      atType: "OfferQueryBuildFromCatalogOfferingsHospitality",
-      buildFromCatalogOfferingsRequest: {
-        atType: "BuildFromCatalogOfferingsRequestAir",
-        ancillaryOfferingIdentifier: [
-          {
-            ancillaryOfferingRef: "AN1",
-            catalogOfferingRef: "CO1",
+  const res = await sdk.hotelRules.buildFromCatalogOfferings({
+    offerQueryBuildFromCatalogOfferingsHospitalityWrapper: {
+      offerQueryBuildFromCatalogOfferingsHospitality: {
+        atType: "OfferQueryBuildFromCatalogOfferingsHospitality",
+        buildFromCatalogOfferingsRequest: {
+          atType: "BuildFromCatalogOfferingsRequestAir",
+          ancillaryOfferingIdentifier: [
+            {
+              ancillaryOfferingRef: "AN1",
+              catalogOfferingRef: "CO1",
+              identifier: {
+                authority: "TVPT",
+                value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
+              },
+              id: "AN1",
+            },
+          ],
+          catalogOfferingIdentifier: {
+            catalogOfferingRef: "co1",
             identifier: {
               authority: "TVPT",
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
-            id: "AN1",
+            id: "co1",
           },
-        ],
-        catalogOfferingIdentifier: {
-          catalogOfferingRef: "co1",
-          identifier: {
-            authority: "TVPT",
-            value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
-          },
-          id: "co1",
-        },
-        catalogOfferingsIdentifier: {
-          identifier: {
-            authority: "TVPT",
-            value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
-          },
-          id: "CatalogOfferings_1",
-        },
-        productIdentifier: [
-          {
+          catalogOfferingsIdentifier: {
             identifier: {
               authority: "TVPT",
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
-            id: "product_1",
-            productRef: "product_1",
+            id: "CatalogOfferings_1",
           },
-        ],
+          productIdentifier: [
+            {
+              identifier: {
+                authority: "TVPT",
+                value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
+              },
+              id: "product_1",
+              productRef: "product_1",
+            },
+            {
+              identifier: {
+                authority: "TVPT",
+                value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
+              },
+              id: "product_1",
+              productRef: "product_1",
+            },
+          ],
+        },
       },
     },
-  },
-  traceId: "silver",
-  travelportPlusSessionID: "Grocery joule",
-  xauthTravelportAccessgroup: "West",
-}).then((res: BuildFromCatalogOfferingsResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -99,35 +105,34 @@ Available January 2023. Build rules by referenceing availability response
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { BuildHotelRulesFromCatalogOfferingResponse } from "akaris-backend/dist/sdk/models/operations";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.hotelRules.buildHotelRulesFromCatalogOffering({
-  offerQueryBuildFromCatalogOfferingWrapper: {
-    offerQueryBuildFromCatalogOffering: {
-      atType: "OfferQueryBuildFromCatalogOffering",
-      buildFromCatalogOfferingHospitality: {
-        atType: "BuildFromCatalogOfferingHospitality",
-        catalogOfferingIdentifier: {
-          authority: "TVPT",
-          value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
+  const res = await sdk.hotelRules.buildHotelRulesFromCatalogOffering({
+    offerQueryBuildFromCatalogOfferingWrapper: {
+      offerQueryBuildFromCatalogOffering: {
+        atType: "OfferQueryBuildFromCatalogOffering",
+        buildFromCatalogOfferingHospitality: {
+          atType: "BuildFromCatalogOfferingHospitality",
+          catalogOfferingIdentifier: {
+            authority: "TVPT",
+            value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
+          },
+          numberOfRooms: 1,
         },
-        numberOfRooms: 1,
       },
     },
-  },
-  traceId: "Borders",
-  xauthTravelportAccessgroup: "Maserati Avon",
-}).then((res: BuildHotelRulesFromCatalogOfferingResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -151,81 +156,67 @@ Full Payload hotel rules request
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { CreateHotelRulesResponse } from "akaris-backend/dist/sdk/models/operations";
 import { HotelAggregatorEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-const sdk = new AkarisBackend({
-  security: {
-    oAuth2: "",
-  },
-});
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
 
-sdk.hotelRules.createHotelRules({
-  offerQueryHospitalityRequestWrapper: {
-    offerQueryHospitalityRequest: {
-      atType: "OfferQueryHospitalityRequest",
-      hotelAggregator: HotelAggregatorEnum.Bonotel,
-      propertyKey: {
-        atType: "firewall",
-        chainCode: "HL",
-        propertyCode: "greedily convergence",
-      },
-      rateCandidate: {
-        atType: "RateCandidate",
-        chainCode: "HL",
-        priority: 897319,
-        propertyCode: "HL12345",
-        rateCategory: RateCategoryEnum.Tour,
-        rateCode: "HL123",
-      },
-      roomStayCandidates: {
-        roomStayCandidate: [
-          {
-            guestCounts: {
-              atType: "GuestCounts",
-              guestCount: [
+  const res = await sdk.hotelRules.createHotelRules({
+    offerQueryHospitalityRequestWrapper: {
+      offerQueryHospitalityRequest: {
+        atType: "OfferQueryHospitalityRequest",
+        propertyKey: {
+          chainCode: "HL",
+          propertyCode: "Islands harness programming",
+        },
+        rateCandidate: {
+          atType: "RateCandidate",
+          chainCode: "HL",
+          propertyCode: "HL12345",
+          rateCode: "HL123",
+        },
+        roomStayCandidates: {
+          roomStayCandidate: [
+            {
+              guestCounts: {
+                atType: "GuestCounts",
+                guestCount: [
+                  {
+                    atType: "GuestCount",
+                    age: 21,
+                    ageQualifyingCode: "10",
+                    count: 2,
+                  },
+                ],
+              },
+              roomAmenity: [
                 {
-                  atType: "GuestCount",
-                  age: 21,
-                  ageQualifyingCode: "10",
-                  count: 2,
+                  inclusion: [
+                    "joyously",
+                  ],
+                  name: "24 hour Room Service",
+                  description: "WiFi",
                 },
               ],
             },
-            roomAmenity: [
-              {
-                atType: "cyan Southwest",
-                inclusion: [
-                  "Sports",
-                ],
-                name: "24 hour Room Service",
-                code: "COM hmph Liaison",
-                description: "WiFi",
-                includedInd: false,
-                quantity: 738116,
-                surchargeInd: false,
-              },
-            ],
-          },
-        ],
+          ],
+        },
+        checkinDate: new RFCDate("2023-05-22"),
+        checkoutDate: new RFCDate("2023-09-14"),
+        numberOfGuests: 105598,
       },
-      bookingCode: "female",
-      checkinDate: new RFCDate("2023-04-26"),
-      checkoutDate: new RFCDate("2021-11-24"),
-      numberOfGuests: 637308,
-      requestedCurrency: "Ball time",
-      storedAmount: 1058.18,
-      storedCurrency: "brr",
     },
-  },
-  traceId: "Market Multigender",
-  xauthTravelportAccessgroup: "Hatchback",
-}).then((res: CreateHotelRulesResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
