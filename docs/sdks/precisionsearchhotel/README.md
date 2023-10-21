@@ -32,7 +32,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
         propertyKey: [
           {
             chainCode: "HL",
-            propertyCode: "City",
+            propertyCode: "string",
           },
         ],
         rateCandidates: {
@@ -63,7 +63,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               roomAmenity: [
                 {
                   inclusion: [
-                    "Music",
+                    "string",
                   ],
                   name: "24 hour Room Service",
                   description: "WiFi",
@@ -72,9 +72,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             },
           ],
         },
-        checkinDate: new RFCDate("2021-07-05"),
-        checkoutDate: new RFCDate("2023-01-31"),
-        numberOfGuests: 598172,
+        checkinDate: new RFCDate("2021-07-01"),
+        checkoutDate: new RFCDate("2023-04-22"),
+        numberOfGuests: 157281,
       },
     },
   });
@@ -121,13 +121,13 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
       propertiesQuerySearch: {
         atType: "PropertiesQuerySearch",
         chainCodes: [
-          "Northwest",
+          "string",
         ],
-        checkInDate: new RFCDate("2022-03-27"),
-        checkOutDate: new RFCDate("2022-02-02"),
+        checkInDate: new RFCDate("2021-05-01"),
+        checkOutDate: new RFCDate("2022-01-18"),
         mealsIncluded: {},
         propertyAmenityCode: [
-          "Rubber",
+          "string",
         ],
         rateCandidates: {
           atType: "RateCandidates",
@@ -156,7 +156,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             roomAmenity: [
               {
                 inclusion: [
-                  "capability",
+                  "string",
                 ],
                 name: "24 hour Room Service",
                 description: "WiFi",

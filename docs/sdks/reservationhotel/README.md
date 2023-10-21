@@ -85,11 +85,11 @@ import { OrganizationTypeEnum } from "akaris-backend/dist/sdk/models/shared";
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
             offerRef: [
-              "Bronze",
+              "string",
             ],
             receiptRef: "6773 2389 2239 2832",
             segmentSequenceList: [
-              499884,
+              248317,
             ],
             id: "3493289238",
           },
@@ -146,7 +146,7 @@ import { OrganizationTypeEnum } from "akaris-backend/dist/sdk/models/shared";
               ],
             },
             profileName: [
-              "Brand",
+              "string",
             ],
             travelOrganizationRef: "TravelAgency_1",
             id: "2",
@@ -201,7 +201,7 @@ import { AkarisBackend } from "akaris-backend";
   });
 
   const res = await sdk.reservationHotel.cancelHotelOffer({
-    reservationIdentifier: "mature",
+    reservationIdentifier: "string",
   });
 
   if (res.statusCode == 200) {
@@ -403,7 +403,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               {
                 documentType: DocumentTypeEnum.Ticket,
                 restriction: [
-                  "Incredible",
+                  "string",
                 ],
                 travelerIdentifierRef: [
                   {
@@ -426,8 +426,8 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             ],
             ticketDesignators: [
               {
-                atType: "Northwest Northwest Rubber",
-                ticketDesignator: "Directives Courts THX",
+                atType: "string",
+                ticketDesignator: "string",
                 travelerIdentifierRef: [
                   {
                     passengerTypeCode: "ADT",
@@ -520,7 +520,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   atType: "TaxesDetail",
                   taxInfo: [
                     {
-                      amount: 6525.12,
+                      amount: 2234.1,
                       currencyCode: {
                         codeAuthority: "ISO 4217",
                         decimalAuthority: "ISO 4217",
@@ -684,7 +684,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               atType: "TaxesDetail",
               taxInfo: [
                 {
-                  amount: 2197.32,
+                  amount: 2635.47,
                   currencyCode: {
                     codeAuthority: "ISO 4217",
                     decimalAuthority: "ISO 4217",
@@ -767,7 +767,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             },
             contactInformationRefusedInd: true,
             shareWithSupplier: [
-              "Avon",
+              "string",
             ],
           },
         ],
@@ -779,7 +779,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
             offerRef: [
-              "Diesel",
+              "string",
             ],
             receiptRef: "6773 2389 2239 2832",
             id: "3493289238",
@@ -802,14 +802,14 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               },
             ],
             shareWithSupplier: [
-              "lift",
+              "string",
             ],
           },
         ],
         reservationDisplaySequence: {
           displaySequence: [
             {
-              offerRef: "Aloha Southwest",
+              offerRef: "string",
               sequence: 1,
               displaySequence: "1",
             },
@@ -982,7 +982,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             ],
           },
           profileName: [
-            "whiteboard",
+            "string",
           ],
           travelOrganizationRef: "TravelAgency_1",
           id: "2",
@@ -1229,7 +1229,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             travelDocument: [
               {
                 atType: "TravelDocumentDetail",
-                gender: GenderEnum.Male,
+                gender: GenderEnum.Undisclosed,
                 nationality: "BR",
                 personName: {
                   atType: "PersonNameDetail",
@@ -1305,7 +1305,7 @@ import { IdentifierTypeENUM } from "akaris-backend/dist/sdk/models/shared";
   });
 
   const res = await sdk.reservationHotel.retrieveHotelReservation({
-    identifier: "Markets Folding",
+    identifier: "string",
     identifierType: IdentifierTypeENUM.Locator,
   });
 
@@ -1375,7 +1375,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   });
 
   const res = await sdk.reservationHotel.updateHotelReservation({
-    identifier: "repurpose blanditiis Hip",
+    identifier: "string",
     reservationDetailWrapper: {
       reservationDetail: {
         atType: "Reservation",
@@ -1468,8 +1468,8 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             destinationPurpose: [
               {
                 atType: "DestinationPurpose",
-                destination: DestinationEnum.MexicoCentralAmericaCanalZoneCostaRica,
-                purpose: PurposeEnum.Pleasure,
+                destination: DestinationEnum.Asia,
+                purpose: PurposeEnum.Business,
               },
             ],
             identifier: {
@@ -1509,7 +1509,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               {
                 documentType: DocumentTypeEnum.Ticket,
                 restriction: [
-                  "quantify",
+                  "string",
                 ],
                 travelerIdentifierRef: [
                   {
@@ -1532,8 +1532,8 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             ],
             ticketDesignators: [
               {
-                atType: "Bedfordshire",
-                ticketDesignator: "courageously weber deposit",
+                atType: "string",
+                ticketDesignator: "string",
                 travelerIdentifierRef: [
                   {
                     passengerTypeCode: "ADT",
@@ -1626,7 +1626,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   atType: "TaxesDetail",
                   taxInfo: [
                     {
-                      amount: 403.26,
+                      amount: 7022.39,
                       currencyCode: {
                         codeAuthority: "ISO 4217",
                         decimalAuthority: "ISO 4217",
@@ -1790,7 +1790,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               atType: "TaxesDetail",
               taxInfo: [
                 {
-                  amount: 5934.54,
+                  amount: 5625.77,
                   currencyCode: {
                     codeAuthority: "ISO 4217",
                     decimalAuthority: "ISO 4217",
@@ -1873,7 +1873,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             },
             contactInformationRefusedInd: true,
             shareWithSupplier: [
-              "Accounts",
+              "string",
             ],
           },
         ],
@@ -1885,7 +1885,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
             offerRef: [
-              "attitude",
+              "string",
             ],
             receiptRef: "6773 2389 2239 2832",
             id: "3493289238",
@@ -1908,14 +1908,14 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               },
             ],
             shareWithSupplier: [
-              "deposit",
+              "string",
             ],
           },
         ],
         reservationDisplaySequence: {
           displaySequence: [
             {
-              offerRef: "bypassing Dysprosium",
+              offerRef: "string",
               sequence: 1,
               displaySequence: "1",
             },
@@ -2088,7 +2088,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             ],
           },
           profileName: [
-            "Missouri",
+            "string",
           ],
           travelOrganizationRef: "TravelAgency_1",
           id: "2",
@@ -2335,7 +2335,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             travelDocument: [
               {
                 atType: "TravelDocumentDetail",
-                gender: GenderEnum.Female,
+                gender: GenderEnum.Unknown,
                 nationality: "BR",
                 personName: {
                   atType: "PersonNameDetail",

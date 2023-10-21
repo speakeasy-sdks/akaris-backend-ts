@@ -10,9 +10,11 @@ export * from "./error";
 export * from "./identifier";
 export * from "./namevaluepair";
 export * from "./nextstep";
+export * from "./nextstepmethodenum";
 export * from "./nextsteps";
 export * from "./referencelist";
 export * from "./result";
+export * from "./resultstatusenum";
 export * from "./warning";
 
 export * from "./sdkerror";

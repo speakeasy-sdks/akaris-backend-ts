@@ -38,7 +38,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   atType: "PropertyRequest",
                   propertyKey: {
                     chainCode: "HL",
-                    propertyCode: "Philippines North",
+                    propertyCode: "string",
                   },
                 },
               ],
@@ -70,7 +70,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                     roomAmenity: [
                       {
                         inclusion: [
-                          "yowza",
+                          "string",
                         ],
                         name: "24 hour Room Service",
                         description: "WiFi",

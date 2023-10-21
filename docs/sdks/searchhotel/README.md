@@ -33,7 +33,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
         propertyKey: [
           {
             chainCode: "HL",
-            propertyCode: "Electric pirouette",
+            propertyCode: "string",
           },
         ],
         rateCandidates: {
@@ -64,7 +64,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               roomAmenity: [
                 {
                   inclusion: [
-                    "conglomeration",
+                    "string",
                   ],
                   name: "24 hour Room Service",
                   description: "WiFi",
@@ -73,9 +73,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             },
           ],
         },
-        checkinDate: new RFCDate("2023-10-30"),
-        checkoutDate: new RFCDate("2022-06-05"),
-        numberOfGuests: 113158,
+        checkinDate: new RFCDate("2022-06-11"),
+        checkoutDate: new RFCDate("2023-06-06"),
+        numberOfGuests: 264917,
       },
     },
   });
@@ -117,8 +117,8 @@ import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
   });
 
   const res = await sdk.searchHotel.getPropertiesDetail({
-    chainCode: "Road haptic",
-    propertyCode: "Vineland array",
+    chainCode: "string",
+    propertyCode: "string",
   });
 
   if (res.statusCode == 200) {
@@ -157,8 +157,8 @@ import { AkarisBackend } from "akaris-backend";
   });
 
   const res = await sdk.searchHotel.getPropertiesPage({
-    identifier: "toothbrush",
-    pageNumber: "Cambridgeshire",
+    identifier: "string",
+    pageNumber: "string",
   });
 
   if (res.statusCode == 200) {
@@ -203,12 +203,12 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
       propertiesQuerySearch: {
         atType: "PropertiesQuerySearch",
         chainCodes: [
-          "Communications",
+          "string",
         ],
-        checkInDate: new RFCDate("2022-01-14"),
-        checkOutDate: new RFCDate("2022-11-04"),
+        checkInDate: new RFCDate("2022-11-19"),
+        checkOutDate: new RFCDate("2022-10-26"),
         propertyAmenityCode: [
-          "Diesel",
+          "string",
         ],
         rateCandidates: {
           atType: "RateCandidates",
@@ -237,7 +237,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             roomAmenity: [
               {
                 inclusion: [
-                  "Gasoline",
+                  "string",
                 ],
                 name: "24 hour Room Service",
                 description: "WiFi",

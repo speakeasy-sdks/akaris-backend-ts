@@ -172,7 +172,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
         atType: "OfferQueryHospitalityRequest",
         propertyKey: {
           chainCode: "HL",
-          propertyCode: "Islands harness programming",
+          propertyCode: "string",
         },
         rateCandidate: {
           atType: "RateCandidate",
@@ -197,7 +197,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               roomAmenity: [
                 {
                   inclusion: [
-                    "joyously",
+                    "string",
                   ],
                   name: "24 hour Room Service",
                   description: "WiFi",
@@ -206,9 +206,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             },
           ],
         },
-        checkinDate: new RFCDate("2023-05-22"),
-        checkoutDate: new RFCDate("2023-09-14"),
-        numberOfGuests: 105598,
+        checkinDate: new RFCDate("2023-10-05"),
+        checkoutDate: new RFCDate("2021-06-10"),
+        numberOfGuests: 524055,
       },
     },
   });
