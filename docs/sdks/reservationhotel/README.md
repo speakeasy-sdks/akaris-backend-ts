@@ -1,5 +1,5 @@
 # ReservationHotel
-(*reservationHotel*)
+(*.reservationHotel*)
 
 ### Available Operations
 
@@ -165,6 +165,7 @@ import { OrganizationTypeEnum } from "akaris-backend/dist/sdk/models/shared";
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -203,6 +204,7 @@ import { AkarisBackend } from "akaris-backend";
   const res = await sdk.reservationHotel.cancelHotelOffer({
     reservationIdentifier: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -1268,6 +1270,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -1308,6 +1311,7 @@ import { IdentifierTypeENUM } from "akaris-backend/dist/sdk/models/shared";
     identifier: "string",
     identifierType: IdentifierTypeENUM.Locator,
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -2373,6 +2377,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response

@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
+import { RFCDate } from "../../../sdk/types";
 import { Address } from "./address";
 import { AlternateContact } from "./alternatecontact";
 import { Comments } from "./comments";

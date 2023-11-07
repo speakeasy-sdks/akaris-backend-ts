@@ -15,6 +15,5 @@ export * from "./nextsteps";
 export * from "./referencelist";
 export * from "./result";
 export * from "./resultstatusenum";
-export * from "./warning";
-
 export * from "./sdkerror";
+export * from "./warning";

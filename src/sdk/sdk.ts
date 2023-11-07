@@ -3,9 +3,9 @@
  */
 
 import * as utils from "../internal/utils";
+import * as shared from "../sdk/models/shared";
 import { HotelAvailability } from "./hotelavailability";
 import { HotelRules } from "./hotelrules";
-import * as shared from "./models/shared";
 import { PrecisionSearchHotel } from "./precisionsearchhotel";
 import { ReservationHotel } from "./reservationhotel";
 import { SearchHotel } from "./searchhotel";
@@ -56,9 +56,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "11.11.0";
-    sdkVersion = "0.4.0";
-    genVersion = "2.171.0";
-    userAgent = "speakeasy-sdk/typescript 0.4.0 2.171.0 11.11.0 akaris-backend";
+    sdkVersion = "0.5.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 0.5.0 2.181.1 11.11.0 akaris-backend";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -67,10 +67,10 @@ export class SDKConfiguration {
 
 export class AkarisBackend {
     public hotelAvailability: HotelAvailability;
-    public hotelRules: HotelRules;
-    public precisionSearchHotel: PrecisionSearchHotel;
     public reservationHotel: ReservationHotel;
+    public hotelRules: HotelRules;
     public searchHotel: SearchHotel;
+    public precisionSearchHotel: PrecisionSearchHotel;
 
     private sdkConfiguration: SDKConfiguration;
 
@@ -91,9 +91,9 @@ export class AkarisBackend {
         });
 
         this.hotelAvailability = new HotelAvailability(this.sdkConfiguration);
-        this.hotelRules = new HotelRules(this.sdkConfiguration);
-        this.precisionSearchHotel = new PrecisionSearchHotel(this.sdkConfiguration);
         this.reservationHotel = new ReservationHotel(this.sdkConfiguration);
+        this.hotelRules = new HotelRules(this.sdkConfiguration);
         this.searchHotel = new SearchHotel(this.sdkConfiguration);
+        this.precisionSearchHotel = new PrecisionSearchHotel(this.sdkConfiguration);
     }
 }

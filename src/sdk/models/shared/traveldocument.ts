@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
+import { RFCDate } from "../../../sdk/types";
 import { DocTypeCodeEnum } from "./doctypecodeenum";
 import { GenderEnum } from "./genderenum";
 import { PersonName } from "./personname";

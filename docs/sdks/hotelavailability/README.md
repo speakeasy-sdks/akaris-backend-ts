@@ -1,5 +1,5 @@
 # HotelAvailability
-(*hotelAvailability*)
+(*.hotelAvailability*)
 
 ### Available Operations
 
@@ -107,6 +107,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -164,6 +165,7 @@ import { AkarisBackend } from "akaris-backend";
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response

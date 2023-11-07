@@ -1,5 +1,5 @@
 # SearchHotel
-(*searchHotel*)
+(*.searchHotel*)
 
 ### Available Operations
 
@@ -80,6 +80,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -121,6 +122,7 @@ import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
     propertyCode: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -160,6 +162,7 @@ import { AkarisBackend } from "akaris-backend";
     identifier: "string",
     pageNumber: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -254,6 +257,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response

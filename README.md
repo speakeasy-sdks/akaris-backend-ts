@@ -133,23 +133,12 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 ## Available Resources and Operations
 
 
-### [hotelAvailability](docs/sdks/hotelavailability/README.md)
+### [.hotelAvailability](docs/sdks/hotelavailability/README.md)
 
 * [createHotelAvailability](docs/sdks/hotelavailability/README.md#createhotelavailability) - Request hotel availability
 * [hotelAvailabilityFromProperties](docs/sdks/hotelavailability/README.md#hotelavailabilityfromproperties) - Request hotel availability from precision search response
 
-### [hotelRules](docs/sdks/hotelrules/README.md)
-
-* [buildFromCatalogOfferings](docs/sdks/hotelrules/README.md#buildfromcatalogofferings) - To be deprecated and replaced with buildfromcatalogoffering
-* [buildHotelRulesFromCatalogOffering](docs/sdks/hotelrules/README.md#buildhotelrulesfromcatalogoffering) - Available January 2023. Build rules by referenceing availability response
-* [createHotelRules](docs/sdks/hotelrules/README.md#createhotelrules) - Full Payload hotel rules request
-
-### [precisionSearchHotel](docs/sdks/precisionsearchhotel/README.md)
-
-* [createPrecision](docs/sdks/precisionsearchhotel/README.md#createprecision) - Precision Search hotels by property ID
-* [precisionSearchProperties](docs/sdks/precisionsearchhotel/README.md#precisionsearchproperties) - Search hotels by location
-
-### [reservationHotel](docs/sdks/reservationhotel/README.md)
+### [.reservationHotel](docs/sdks/reservationhotel/README.md)
 
 * [buildHotelReservation](docs/sdks/reservationhotel/README.md#buildhotelreservation) - Single payload booking request
 * [cancelHotelOffer](docs/sdks/reservationhotel/README.md#cancelhoteloffer) - Cancel an Offer within a Reservation
@@ -157,12 +146,23 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 * [retrieveHotelReservation](docs/sdks/reservationhotel/README.md#retrievehotelreservation) - Retrieve a Reservation
 * [updateHotelReservation](docs/sdks/reservationhotel/README.md#updatehotelreservation) - Update a reservation
 
-### [searchHotel](docs/sdks/searchhotel/README.md)
+### [.hotelRules](docs/sdks/hotelrules/README.md)
+
+* [buildFromCatalogOfferings](docs/sdks/hotelrules/README.md#buildfromcatalogofferings) - To be deprecated and replaced with buildfromcatalogoffering
+* [buildHotelRulesFromCatalogOffering](docs/sdks/hotelrules/README.md#buildhotelrulesfromcatalogoffering) - Available January 2023. Build rules by referenceing availability response
+* [createHotelRules](docs/sdks/hotelrules/README.md#createhotelrules) - Full Payload hotel rules request
+
+### [.searchHotel](docs/sdks/searchhotel/README.md)
 
 * [create](docs/sdks/searchhotel/README.md#create) - Search hotels by property ID
 * [getPropertiesDetail](docs/sdks/searchhotel/README.md#getpropertiesdetail) - Request hotel details
 * [getPropertiesPage](docs/sdks/searchhotel/README.md#getpropertiespage) - Return additional search results (pagination)
 * [searchProperties](docs/sdks/searchhotel/README.md#searchproperties) - Search hotels by location
+
+### [.precisionSearchHotel](docs/sdks/precisionsearchhotel/README.md)
+
+* [createPrecision](docs/sdks/precisionsearchhotel/README.md#createprecision) - Precision Search hotels by property ID
+* [precisionSearchProperties](docs/sdks/precisionsearchhotel/README.md#precisionsearchproperties) - Search hotels by location
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
@@ -178,6 +178,505 @@ return value of `next` is `null`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
 <!-- End Pagination -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+
+## Example
+
+```typescript
+import { AkarisBackend } from "akaris-backend";
+import { CurrencySourceEnum, DurationUnitEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
+import { RFCDate } from "akaris-backend/dist/sdk/types";
+
+(async() => {
+  const sdk = new AkarisBackend({
+    security: {
+      oAuth2: "",
+    },
+  });
+
+  
+  let res;
+  try {
+    res = await sdk.hotelAvailability.createHotelAvailability({
+    catalogOfferingsQueryRequestHospitalityWrapper: {
+      catalogOfferingsQueryRequest: {
+        atType: "CatalogOfferingsRequestHospitality",
+        catalogOfferingsRequest: [
+          {
+            atType: "CatalogOfferingsRequestHospitality",
+            hotelSearchCriterion: {
+              atType: "HotelSearchCriterion",
+              propertyRequest: [
+                {
+                  atType: "PropertyRequest",
+                  propertyKey: {
+                    chainCode: "HL",
+                    propertyCode: "string",
+                  },
+                },
+              ],
+              rateCandidates: {
+                atType: "RateCandidates",
+                rateCandidate: [
+                  {
+                    atType: "RateCandidate",
+                    chainCode: "HL",
+                    propertyCode: "HL12345",
+                    rateCode: "HL123",
+                  },
+                ],
+              },
+              roomStayCandidates: {
+                roomStayCandidate: [
+                  {
+                    guestCounts: {
+                      atType: "GuestCounts",
+                      guestCount: [
+                        {
+                          atType: "GuestCount",
+                          age: 21,
+                          ageQualifyingCode: "10",
+                          count: 2,
+                        },
+                      ],
+                    },
+                    roomAmenity: [
+                      {
+                        inclusion: [
+                          "string",
+                        ],
+                        name: "24 hour Room Service",
+                        description: "WiFi",
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+            maximumAmount: {
+              approximateInd: true,
+              code: "USD",
+              minorUnit: 2,
+              value: 124.56,
+            },
+            minimumAmount: {
+              approximateInd: true,
+              code: "USD",
+              minorUnit: 2,
+              value: 124.56,
+            },
+            searchControlConsoleChannelID: {
+              value: "2",
+            },
+            stayDates: {
+              duration: "P1D",
+              end: new RFCDate("2023-03-03"),
+              specific: new RFCDate("2023-03-03"),
+              start: new RFCDate("2023-03-03"),
+            },
+          },
+        ],
+      },
+    },
+  });
+  } catch (e) { 
+    if (e instanceof BaseResponse) {
+      console.error(e) // handle exception 
+    
+  }
+
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://api.pp.travelport.com/11/hotel` | None |
+| 1 | `https://api.travelport.com/11/hotel` | None |
+
+For example:
+
+```typescript
+import { AkarisBackend } from "akaris-backend";
+import {
+    CurrencySourceEnum,
+    DurationUnitEnum,
+    RateCategoryEnum,
+} from "akaris-backend/dist/sdk/models/shared";
+import { RFCDate } from "akaris-backend/dist/sdk/types";
+
+(async () => {
+    const sdk = new AkarisBackend({
+        serverIdx: 1,
+        security: {
+            oAuth2: "",
+        },
+    });
+
+    const res = await sdk.hotelAvailability.createHotelAvailability({
+        catalogOfferingsQueryRequestHospitalityWrapper: {
+            catalogOfferingsQueryRequest: {
+                atType: "CatalogOfferingsRequestHospitality",
+                catalogOfferingsRequest: [
+                    {
+                        atType: "CatalogOfferingsRequestHospitality",
+                        hotelSearchCriterion: {
+                            atType: "HotelSearchCriterion",
+                            propertyRequest: [
+                                {
+                                    atType: "PropertyRequest",
+                                    propertyKey: {
+                                        chainCode: "HL",
+                                        propertyCode: "string",
+                                    },
+                                },
+                            ],
+                            rateCandidates: {
+                                atType: "RateCandidates",
+                                rateCandidate: [
+                                    {
+                                        atType: "RateCandidate",
+                                        chainCode: "HL",
+                                        propertyCode: "HL12345",
+                                        rateCode: "HL123",
+                                    },
+                                ],
+                            },
+                            roomStayCandidates: {
+                                roomStayCandidate: [
+                                    {
+                                        guestCounts: {
+                                            atType: "GuestCounts",
+                                            guestCount: [
+                                                {
+                                                    atType: "GuestCount",
+                                                    age: 21,
+                                                    ageQualifyingCode: "10",
+                                                    count: 2,
+                                                },
+                                            ],
+                                        },
+                                        roomAmenity: [
+                                            {
+                                                inclusion: ["string"],
+                                                name: "24 hour Room Service",
+                                                description: "WiFi",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        },
+                        maximumAmount: {
+                            approximateInd: true,
+                            code: "USD",
+                            minorUnit: 2,
+                            value: 124.56,
+                        },
+                        minimumAmount: {
+                            approximateInd: true,
+                            code: "USD",
+                            minorUnit: 2,
+                            value: 124.56,
+                        },
+                        searchControlConsoleChannelID: {
+                            value: "2",
+                        },
+                        stayDates: {
+                            duration: "P1D",
+                            end: new RFCDate("2023-03-03"),
+                            specific: new RFCDate("2023-03-03"),
+                            start: new RFCDate("2023-03-03"),
+                        },
+                    },
+                ],
+            },
+        },
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
+
+```typescript
+import { AkarisBackend } from "akaris-backend";
+import {
+    CurrencySourceEnum,
+    DurationUnitEnum,
+    RateCategoryEnum,
+} from "akaris-backend/dist/sdk/models/shared";
+import { RFCDate } from "akaris-backend/dist/sdk/types";
+
+(async () => {
+    const sdk = new AkarisBackend({
+        serverURL: "https://api.pp.travelport.com/11/hotel",
+        security: {
+            oAuth2: "",
+        },
+    });
+
+    const res = await sdk.hotelAvailability.createHotelAvailability({
+        catalogOfferingsQueryRequestHospitalityWrapper: {
+            catalogOfferingsQueryRequest: {
+                atType: "CatalogOfferingsRequestHospitality",
+                catalogOfferingsRequest: [
+                    {
+                        atType: "CatalogOfferingsRequestHospitality",
+                        hotelSearchCriterion: {
+                            atType: "HotelSearchCriterion",
+                            propertyRequest: [
+                                {
+                                    atType: "PropertyRequest",
+                                    propertyKey: {
+                                        chainCode: "HL",
+                                        propertyCode: "string",
+                                    },
+                                },
+                            ],
+                            rateCandidates: {
+                                atType: "RateCandidates",
+                                rateCandidate: [
+                                    {
+                                        atType: "RateCandidate",
+                                        chainCode: "HL",
+                                        propertyCode: "HL12345",
+                                        rateCode: "HL123",
+                                    },
+                                ],
+                            },
+                            roomStayCandidates: {
+                                roomStayCandidate: [
+                                    {
+                                        guestCounts: {
+                                            atType: "GuestCounts",
+                                            guestCount: [
+                                                {
+                                                    atType: "GuestCount",
+                                                    age: 21,
+                                                    ageQualifyingCode: "10",
+                                                    count: 2,
+                                                },
+                                            ],
+                                        },
+                                        roomAmenity: [
+                                            {
+                                                inclusion: ["string"],
+                                                name: "24 hour Room Service",
+                                                description: "WiFi",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        },
+                        maximumAmount: {
+                            approximateInd: true,
+                            code: "USD",
+                            minorUnit: 2,
+                            value: 124.56,
+                        },
+                        minimumAmount: {
+                            approximateInd: true,
+                            code: "USD",
+                            minorUnit: 2,
+                            value: 124.56,
+                        },
+                        searchControlConsoleChannelID: {
+                            value: "2",
+                        },
+                        stayDates: {
+                            duration: "P1D",
+                            end: new RFCDate("2023-03-03"),
+                            specific: new RFCDate("2023-03-03"),
+                            start: new RFCDate("2023-03-03"),
+                        },
+                    },
+                ],
+            },
+        },
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```typescript
+from akaris-backend import AkarisBackend;
+import axios;
+
+const httpClient = axios.create({
+    headers: {'x-custom-header': 'someValue'}
+})
+
+
+const sdk = new AkarisBackend({defaultClient: httpClient});
+```
+
+
+<!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name         | Type         | Scheme       |
+| ------------ | ------------ | ------------ |
+| `oAuth2`     | oauth2       | OAuth2 token |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+
+```typescript
+import { AkarisBackend } from "akaris-backend";
+import {
+    CurrencySourceEnum,
+    DurationUnitEnum,
+    RateCategoryEnum,
+} from "akaris-backend/dist/sdk/models/shared";
+import { RFCDate } from "akaris-backend/dist/sdk/types";
+
+(async () => {
+    const sdk = new AkarisBackend({
+        security: {
+            oAuth2: "",
+        },
+    });
+
+    const res = await sdk.hotelAvailability.createHotelAvailability({
+        catalogOfferingsQueryRequestHospitalityWrapper: {
+            catalogOfferingsQueryRequest: {
+                atType: "CatalogOfferingsRequestHospitality",
+                catalogOfferingsRequest: [
+                    {
+                        atType: "CatalogOfferingsRequestHospitality",
+                        hotelSearchCriterion: {
+                            atType: "HotelSearchCriterion",
+                            propertyRequest: [
+                                {
+                                    atType: "PropertyRequest",
+                                    propertyKey: {
+                                        chainCode: "HL",
+                                        propertyCode: "string",
+                                    },
+                                },
+                            ],
+                            rateCandidates: {
+                                atType: "RateCandidates",
+                                rateCandidate: [
+                                    {
+                                        atType: "RateCandidate",
+                                        chainCode: "HL",
+                                        propertyCode: "HL12345",
+                                        rateCode: "HL123",
+                                    },
+                                ],
+                            },
+                            roomStayCandidates: {
+                                roomStayCandidate: [
+                                    {
+                                        guestCounts: {
+                                            atType: "GuestCounts",
+                                            guestCount: [
+                                                {
+                                                    atType: "GuestCount",
+                                                    age: 21,
+                                                    ageQualifyingCode: "10",
+                                                    count: 2,
+                                                },
+                                            ],
+                                        },
+                                        roomAmenity: [
+                                            {
+                                                inclusion: ["string"],
+                                                name: "24 hour Room Service",
+                                                description: "WiFi",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        },
+                        maximumAmount: {
+                            approximateInd: true,
+                            code: "USD",
+                            minorUnit: 2,
+                            value: 124.56,
+                        },
+                        minimumAmount: {
+                            approximateInd: true,
+                            code: "USD",
+                            minorUnit: 2,
+                            value: 124.56,
+                        },
+                        searchControlConsoleChannelID: {
+                            value: "2",
+                        },
+                        stayDates: {
+                            duration: "P1D",
+                            end: new RFCDate("2023-03-03"),
+                            specific: new RFCDate("2023-03-03"),
+                            start: new RFCDate("2023-03-03"),
+                        },
+                    },
+                ],
+            },
+        },
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

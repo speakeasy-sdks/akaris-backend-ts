@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { RFCDate } from "../../types";
+import { RFCDate } from "../../../sdk/types";
 import { HotelSortOrderEnum } from "./hotelsortorderenum";
 import { ImageSizeEnum } from "./imagesizeenum";
 import { RateCandidates } from "./ratecandidates";

@@ -1,5 +1,5 @@
 # PrecisionSearchHotel
-(*precisionSearchHotel*)
+(*.precisionSearchHotel*)
 
 ### Available Operations
 
@@ -78,6 +78,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -173,6 +174,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
       },
     },
   });
+
 
   if (res.statusCode == 200) {
     // handle response
