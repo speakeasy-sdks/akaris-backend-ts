@@ -133,12 +133,12 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 ## Available Resources and Operations
 
 
-### [.hotelAvailability](docs/sdks/hotelavailability/README.md)
+### [hotelAvailability](docs/sdks/hotelavailability/README.md)
 
 * [createHotelAvailability](docs/sdks/hotelavailability/README.md#createhotelavailability) - Request hotel availability
 * [hotelAvailabilityFromProperties](docs/sdks/hotelavailability/README.md#hotelavailabilityfromproperties) - Request hotel availability from precision search response
 
-### [.reservationHotel](docs/sdks/reservationhotel/README.md)
+### [reservationHotel](docs/sdks/reservationhotel/README.md)
 
 * [buildHotelReservation](docs/sdks/reservationhotel/README.md#buildhotelreservation) - Single payload booking request
 * [cancelHotelOffer](docs/sdks/reservationhotel/README.md#cancelhoteloffer) - Cancel an Offer within a Reservation
@@ -146,20 +146,20 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 * [retrieveHotelReservation](docs/sdks/reservationhotel/README.md#retrievehotelreservation) - Retrieve a Reservation
 * [updateHotelReservation](docs/sdks/reservationhotel/README.md#updatehotelreservation) - Update a reservation
 
-### [.hotelRules](docs/sdks/hotelrules/README.md)
+### [hotelRules](docs/sdks/hotelrules/README.md)
 
 * [buildFromCatalogOfferings](docs/sdks/hotelrules/README.md#buildfromcatalogofferings) - To be deprecated and replaced with buildfromcatalogoffering
 * [buildHotelRulesFromCatalogOffering](docs/sdks/hotelrules/README.md#buildhotelrulesfromcatalogoffering) - Available January 2023. Build rules by referenceing availability response
 * [createHotelRules](docs/sdks/hotelrules/README.md#createhotelrules) - Full Payload hotel rules request
 
-### [.searchHotel](docs/sdks/searchhotel/README.md)
+### [searchHotel](docs/sdks/searchhotel/README.md)
 
 * [create](docs/sdks/searchhotel/README.md#create) - Search hotels by property ID
 * [getPropertiesDetail](docs/sdks/searchhotel/README.md#getpropertiesdetail) - Request hotel details
 * [getPropertiesPage](docs/sdks/searchhotel/README.md#getpropertiespage) - Return additional search results (pagination)
 * [searchProperties](docs/sdks/searchhotel/README.md#searchproperties) - Search hotels by location
 
-### [.precisionSearchHotel](docs/sdks/precisionsearchhotel/README.md)
+### [precisionSearchHotel](docs/sdks/precisionsearchhotel/README.md)
 
 * [createPrecision](docs/sdks/precisionsearchhotel/README.md#createprecision) - Precision Search hotels by property ID
 * [precisionSearchProperties](docs/sdks/precisionsearchhotel/README.md#precisionsearchproperties) - Search hotels by location
@@ -184,7 +184,12 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 
 ## Example
@@ -287,11 +292,10 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
   } catch (e) { 
-    if (e instanceof BaseResponse) {
+    if (e instanceof errors.BaseResponse) {
       console.error(e) // handle exception 
     
   }
-
 
   if (res.statusCode == 200) {
     // handle response
@@ -553,19 +557,16 @@ const httpClient = axios.create({
 
 const sdk = new AkarisBackend({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name         | Type         | Scheme       |
 | ------------ | ------------ | ------------ |

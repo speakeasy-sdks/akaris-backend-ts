@@ -1,0 +1,10 @@
+# DestinationPurpose
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `atType`                                                                | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     | DestinationPurpose                                                      |
+| `destination`                                                           | [shared.DestinationEnum](../../../sdk/models/shared/destinationenum.md) | :heavy_check_mark:                                                      | N/A                                                                     |                                                                         |
+| `purpose`                                                               | [shared.PurposeEnum](../../../sdk/models/shared/purposeenum.md)         | :heavy_check_mark:                                                      | N/A                                                                     |                                                                         |

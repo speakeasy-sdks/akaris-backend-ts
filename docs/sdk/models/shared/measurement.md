@@ -1,0 +1,12 @@
+# Measurement
+
+Used for dimensional units (width, height, depth) or weight
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `measurementType`                                                                               | [shared.MeasurementTypeEnum](../../../sdk/models/shared/measurementtypeenum.md)                 | :heavy_minus_sign:                                                                              | The type of measurement such as width, height, weight                                           |                                                                                                 |
+| `unit`                                                                                          | [shared.UnitOfMeasureEnum](../../../sdk/models/shared/unitofmeasureenum.md)                     | :heavy_minus_sign:                                                                              | The unit of measure in a code format. Refer to OpenTravel Code List Unit of Measure Code (UOM). |                                                                                                 |
+| `value`                                                                                         | *number*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             | 2.22                                                                                            |

@@ -1,5 +1,5 @@
 # HotelAvailability
-(*.hotelAvailability*)
+(*hotelAvailability*)
 
 ### Available Operations
 
@@ -107,7 +107,6 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -116,16 +115,21 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.CreateHotelAvailabilityRequest](../../models/operations/createhotelavailabilityrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateHotelAvailabilityRequest](../../sdk/models/operations/createhotelavailabilityrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.CreateHotelAvailabilityResponse](../../models/operations/createhotelavailabilityresponse.md)>**
+**Promise<[operations.CreateHotelAvailabilityResponse](../../sdk/models/operations/createhotelavailabilityresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## hotelAvailabilityFromProperties
 
@@ -166,7 +170,6 @@ import { AkarisBackend } from "akaris-backend";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -175,13 +178,18 @@ import { AkarisBackend } from "akaris-backend";
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.HotelAvailabilityFromPropertiesRequest](../../models/operations/hotelavailabilityfrompropertiesrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [operations.HotelAvailabilityFromPropertiesRequest](../../sdk/models/operations/hotelavailabilityfrompropertiesrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
 
 
 ### Response
 
-**Promise<[operations.HotelAvailabilityFromPropertiesResponse](../../models/operations/hotelavailabilityfrompropertiesresponse.md)>**
+**Promise<[operations.HotelAvailabilityFromPropertiesResponse](../../sdk/models/operations/hotelavailabilityfrompropertiesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

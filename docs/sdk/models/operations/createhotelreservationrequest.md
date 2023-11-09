@@ -1,0 +1,10 @@
+# CreateHotelReservationRequest
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `reservationDetailWrapper`                                                                     | [shared.ReservationDetailWrapper](../../../sdk/models/shared/reservationdetailwrapper.md)      | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `traceId`                                                                                      | *string*                                                                                       | :heavy_minus_sign:                                                                             | Identifier used to correlate API invocations across long-running or multi-call business flows. |
+| `xauthTravelportAccessgroup`                                                                   | *string*                                                                                       | :heavy_minus_sign:                                                                             | Identifies the Travelport access group with which the caller is associated                     |

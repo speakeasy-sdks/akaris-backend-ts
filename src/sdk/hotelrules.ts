@@ -31,7 +31,7 @@ export class HotelRules {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/rules/offershospitality/buildfromcatalogofferings";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -69,7 +69,7 @@ export class HotelRules {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -148,7 +148,7 @@ export class HotelRules {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/rules/offershospitality/buildfromcatalogoffering";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -186,7 +186,7 @@ export class HotelRules {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -265,7 +265,7 @@ export class HotelRules {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/rules/offershospitality/buildfromrequest";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -303,7 +303,7 @@ export class HotelRules {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

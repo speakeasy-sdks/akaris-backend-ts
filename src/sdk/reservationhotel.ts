@@ -34,7 +34,7 @@ export class ReservationHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/book/reservations/build";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/book/reservations/build";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -71,7 +71,7 @@ export class ReservationHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -153,7 +153,7 @@ export class ReservationHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/book/reservations/{reservationIdentifier}/canceloffer",
             req
@@ -179,7 +179,7 @@ export class ReservationHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -259,7 +259,7 @@ export class ReservationHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/book/reservations";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/book/reservations";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -296,7 +296,7 @@ export class ReservationHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -378,7 +378,11 @@ export class ReservationHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/book/reservations/{Identifier}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/book/reservations/{Identifier}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -400,7 +404,7 @@ export class ReservationHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -481,7 +485,11 @@ export class ReservationHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/book/reservations/{Identifier}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/book/reservations/{Identifier}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -518,7 +526,7 @@ export class ReservationHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

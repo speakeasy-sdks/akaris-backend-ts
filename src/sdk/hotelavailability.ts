@@ -34,7 +34,7 @@ export class HotelAvailability {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string =
+        const operationUrl: string =
             baseURL.replace(/\/$/, "") + "/availability/catalogofferingshospitality";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
@@ -72,7 +72,7 @@ export class HotelAvailability {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -154,7 +154,8 @@ export class HotelAvailability {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/availability/buildfromproperties";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/availability/buildfromproperties";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -191,7 +192,7 @@ export class HotelAvailability {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

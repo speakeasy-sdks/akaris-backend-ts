@@ -1,5 +1,5 @@
 # PrecisionSearchHotel
-(*.precisionSearchHotel*)
+(*precisionSearchHotel*)
 
 ### Available Operations
 
@@ -79,7 +79,6 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -88,16 +87,21 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.CreatePrecisionRequest](../../models/operations/createprecisionrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.CreatePrecisionRequest](../../sdk/models/operations/createprecisionrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.CreatePrecisionResponse](../../models/operations/createprecisionresponse.md)>**
+**Promise<[operations.CreatePrecisionResponse](../../sdk/models/operations/createprecisionresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## precisionSearchProperties
 
@@ -175,7 +179,6 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -184,13 +187,18 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PrecisionSearchPropertiesRequest](../../models/operations/precisionsearchpropertiesrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.PrecisionSearchPropertiesRequest](../../sdk/models/operations/precisionsearchpropertiesrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
 
 
 ### Response
 
-**Promise<[operations.PrecisionSearchPropertiesResponse](../../models/operations/precisionsearchpropertiesresponse.md)>**
+**Promise<[operations.PrecisionSearchPropertiesResponse](../../sdk/models/operations/precisionsearchpropertiesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

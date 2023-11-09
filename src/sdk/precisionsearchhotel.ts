@@ -34,7 +34,7 @@ export class PrecisionSearchHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/search/properties/precision";
+        const operationUrl: string = baseURL.replace(/\/$/, "") + "/search/properties/precision";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -71,7 +71,7 @@ export class PrecisionSearchHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -152,7 +152,8 @@ export class PrecisionSearchHotel {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/search/properties/precision/location";
+        const operationUrl: string =
+            baseURL.replace(/\/$/, "") + "/search/properties/precision/location";
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -189,7 +190,7 @@ export class PrecisionSearchHotel {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",

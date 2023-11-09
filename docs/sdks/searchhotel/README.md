@@ -1,5 +1,5 @@
 # SearchHotel
-(*.searchHotel*)
+(*searchHotel*)
 
 ### Available Operations
 
@@ -80,7 +80,6 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -89,16 +88,21 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `request`                                                            | [operations.CreateRequest](../../models/operations/createrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
-| `config`                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)         | :heavy_minus_sign:                                                   | Available config options for making requests.                        |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [operations.CreateRequest](../../sdk/models/operations/createrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| `config`                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)             | :heavy_minus_sign:                                                       | Available config options for making requests.                            |
 
 
 ### Response
 
-**Promise<[operations.CreateResponse](../../models/operations/createresponse.md)>**
+**Promise<[operations.CreateResponse](../../sdk/models/operations/createresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getPropertiesDetail
 
@@ -122,7 +126,6 @@ import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
     propertyCode: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -131,16 +134,21 @@ import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetPropertiesDetailRequest](../../models/operations/getpropertiesdetailrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetPropertiesDetailRequest](../../sdk/models/operations/getpropertiesdetailrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
 
-**Promise<[operations.GetPropertiesDetailResponse](../../models/operations/getpropertiesdetailresponse.md)>**
+**Promise<[operations.GetPropertiesDetailResponse](../../sdk/models/operations/getpropertiesdetailresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## getPropertiesPage
 
@@ -163,7 +171,6 @@ import { AkarisBackend } from "akaris-backend";
     pageNumber: "string",
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -172,16 +179,21 @@ import { AkarisBackend } from "akaris-backend";
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetPropertiesPageRequest](../../models/operations/getpropertiespagerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.GetPropertiesPageRequest](../../sdk/models/operations/getpropertiespagerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.GetPropertiesPageResponse](../../models/operations/getpropertiespageresponse.md)>**
+**Promise<[operations.GetPropertiesPageResponse](../../sdk/models/operations/getpropertiespageresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |
 
 ## searchProperties
 
@@ -258,7 +270,6 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     },
   });
 
-
   if (res.statusCode == 200) {
     // handle response
   }
@@ -267,13 +278,18 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.SearchPropertiesRequest](../../models/operations/searchpropertiesrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.SearchPropertiesRequest](../../sdk/models/operations/searchpropertiesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.SearchPropertiesResponse](../../models/operations/searchpropertiesresponse.md)>**
+**Promise<[operations.SearchPropertiesResponse](../../sdk/models/operations/searchpropertiesresponse.md)>**
+### Errors
 
+| Error Object            | Status Code             | Content Type            |
+| ----------------------- | ----------------------- | ----------------------- |
+| errors.BaseResponse     | 400,401,402,403,404,500 | application/json        |
+| errors.SDKError         | 400-600                 | */*                     |

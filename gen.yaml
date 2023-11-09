@@ -2,19 +2,19 @@ configVersion: 1.0.0
 management:
   docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
   docVersion: 11.11.0
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: akaris-backend
   repoURL: https://github.com/speakeasy-sdks/akaris-backend-ts.git
 features:
   typescript:
-    core: 3.1.0
+    core: 3.1.2
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 typescript:
-  version: 0.5.0
+  version: 0.5.1
   author: akaris-air
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
@@ -26,7 +26,9 @@ typescript:
       operations: sdk/models/operations
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/speakeasy-sdks/akaris-backend-ts
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: akaris-backend
   repoSubDirectory: .
