@@ -80,7 +80,7 @@ export class HotelAvailability {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -89,20 +89,20 @@ export class HotelAvailability {
         const res: operations.CreateHotelAvailabilityResponse =
             new operations.CreateHotelAvailabilityResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.catalogOfferingsHospitalityResponseWrapper = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.CatalogOfferingsHospitalityResponseWrapper
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -110,13 +110,13 @@ export class HotelAvailability {
                 }
                 break;
             case [400, 401, 402, 403, 404, 500].includes(httpRes?.status):
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     const err = utils.objectToClass(JSON.parse(decodedRes), errors.BaseResponse);
                     err.rawResponse = httpRes;
                     throw new errors.BaseResponse(err);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -200,7 +200,7 @@ export class HotelAvailability {
             ...config,
         });
 
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
 
         if (httpRes?.status == null) {
             throw new Error(`status code not found in response: ${httpRes}`);
@@ -209,20 +209,20 @@ export class HotelAvailability {
         const res: operations.HotelAvailabilityFromPropertiesResponse =
             new operations.HotelAvailabilityFromPropertiesResponse({
                 statusCode: httpRes.status,
-                contentType: contentType,
+                contentType: responseContentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 201:
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.catalogOfferingsHospitalityResponseWrapper = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.CatalogOfferingsHospitalityResponseWrapper
                     );
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
@@ -230,13 +230,13 @@ export class HotelAvailability {
                 }
                 break;
             case [400, 401, 402, 403, 404, 500].includes(httpRes?.status):
-                if (utils.matchContentType(contentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `application/json`)) {
                     const err = utils.objectToClass(JSON.parse(decodedRes), errors.BaseResponse);
                     err.rawResponse = httpRes;
                     throw new errors.BaseResponse(err);
                 } else {
                     throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
+                        "unknown content-type received: " + responseContentType,
                         httpRes.status,
                         decodedRes,
                         httpRes
