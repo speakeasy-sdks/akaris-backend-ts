@@ -3,41 +3,40 @@
  */
 
 import { SpeakeasyMetadata } from "../../../internal/utils";
-import { CurrencyRateConversion } from "./currencyrateconversion";
-import { Identifier } from "./identifier";
-import { NextSteps } from "./nextsteps";
-import { ReferenceList } from "./referencelist";
-import { Result } from "./result";
+import * as shared from "../../../sdk/models/shared";
 import { classToPlain, Expose, Type } from "class-transformer";
 
+/**
+ * Bad Request- 400
+ */
 export class BaseResponse extends Error {
-    @SpeakeasyMetadata({ elemType: CurrencyRateConversion })
+    @SpeakeasyMetadata({ elemType: shared.CurrencyRateConversion })
     @Expose({ name: "CurrencyRateConversion" })
-    @Type(() => CurrencyRateConversion)
-    currencyRateConversion?: CurrencyRateConversion[];
+    @Type(() => shared.CurrencyRateConversion)
+    currencyRateConversion?: shared.CurrencyRateConversion[];
 
     /**
      * Identifier provides the ability to create a globally unique identifier. For the identifier to be globally unique it must have a system provided identifier and the system must be identified using a global naming authority. System identification uses the domain naming system (DNS) to assure they are globally unique and should be an URL. The system provided ID will typically be a primary or surrogate key in a database.
      */
     @SpeakeasyMetadata()
     @Expose({ name: "Identifier" })
-    @Type(() => Identifier)
-    identifier?: Identifier;
+    @Type(() => shared.Identifier)
+    identifier?: shared.Identifier;
 
     @SpeakeasyMetadata()
     @Expose({ name: "NextSteps" })
-    @Type(() => NextSteps)
-    nextSteps?: NextSteps;
+    @Type(() => shared.NextSteps)
+    nextSteps?: shared.NextSteps;
 
-    @SpeakeasyMetadata({ elemType: ReferenceList })
+    @SpeakeasyMetadata({ elemType: shared.ReferenceList })
     @Expose({ name: "ReferenceList" })
-    @Type(() => ReferenceList)
-    referenceList?: ReferenceList[];
+    @Type(() => shared.ReferenceList)
+    referenceList?: shared.ReferenceList[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "Result" })
-    @Type(() => Result)
-    result?: Result;
+    @Type(() => shared.Result)
+    result?: shared.Result;
 
     /**
      * Optional ID for internal child transactions created for processing a single request (single transaction). Should be a 128 bit GUID format. Also known as ChildTrackingId.
