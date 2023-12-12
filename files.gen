@@ -267,7 +267,6 @@ src/sdk/models/errors/baseresponse.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/createhotelavailabilityrequest.md
 docs/sdk/models/operations/createhotelavailabilityresponse.md
 docs/sdk/models/operations/hotelavailabilityfrompropertiesrequest.md
@@ -532,4 +531,5 @@ docs/sdks/reservationhotel/README.md
 docs/sdks/hotelrules/README.md
 docs/sdks/searchhotel/README.md
 docs/sdks/precisionsearchhotel/README.md
+USAGE.md
 .gitattributes

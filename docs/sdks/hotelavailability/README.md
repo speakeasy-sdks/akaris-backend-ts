@@ -17,10 +17,10 @@ import { AkarisBackend } from "akaris-backend";
 import { CurrencySourceEnum, DurationUnitEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -110,7 +110,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -140,10 +142,10 @@ Hotel Availability returns room types and rates available at one or more specifi
 ```typescript
 import { AkarisBackend } from "akaris-backend";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -152,14 +154,7 @@ import { AkarisBackend } from "akaris-backend";
       catalogOfferingsQueryBuildFromProperties: {
         buildFromCatalogOfferingHospitality: {
           propertInfoIds: [
-            "O",
-            "N",
-            "-",
-            "6",
-            "0",
-            "1",
-            "0",
-            "6",
+            "ON-60106",
           ],
           propertiesIdentifier: {
             authority: "TVPT",
@@ -173,7 +168,9 @@ import { AkarisBackend } from "akaris-backend";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

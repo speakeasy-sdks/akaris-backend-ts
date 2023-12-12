@@ -19,10 +19,10 @@ import { AkarisBackend } from "akaris-backend";
 import { ImageSizeEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -83,7 +83,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -114,10 +116,10 @@ The optional Hotel Details request retrieves for one specified property a detail
 import { AkarisBackend } from "akaris-backend";
 import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -129,7 +131,9 @@ import { ImageSizeEnum } from "akaris-backend/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -159,10 +163,10 @@ Hotel Search uses pagination by default. The initial search response returns 25 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -174,7 +178,9 @@ import { AkarisBackend } from "akaris-backend";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -206,10 +212,10 @@ import { AkarisBackend } from "akaris-backend";
 import { HotelSortOrderEnum, ImageSizeEnum, RateCategoryEnum, UnitOfDistanceEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -273,7 +279,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

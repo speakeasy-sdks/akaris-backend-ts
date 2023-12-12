@@ -16,10 +16,10 @@ To be deprecated and replaced with buildfromcatalogoffering
 ```typescript
 import { AkarisBackend } from "akaris-backend";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -81,7 +81,9 @@ import { AkarisBackend } from "akaris-backend";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -111,10 +113,10 @@ Available January 2023. Build rules by referenceing availability response
 ```typescript
 import { AkarisBackend } from "akaris-backend";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -137,7 +139,9 @@ import { AkarisBackend } from "akaris-backend";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -169,10 +173,10 @@ import { AkarisBackend } from "akaris-backend";
 import { HotelAggregatorEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -226,7 +230,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

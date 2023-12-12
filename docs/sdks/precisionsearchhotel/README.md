@@ -17,10 +17,10 @@ import { AkarisBackend } from "akaris-backend";
 import { ImageSizeEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -82,7 +82,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -114,10 +116,10 @@ import { AkarisBackend } from "akaris-backend";
 import { HotelSortOrderEnum, ImageSizeEnum, RateCategoryEnum, UnitOfDistanceEnum } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -182,7 +184,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

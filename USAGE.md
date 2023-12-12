@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { AkarisBackend } from "akaris-backend";
 import {
@@ -8,10 +8,10 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async () => {
+async function run() {
     const sdk = new AkarisBackend({
         security: {
-            oAuth2: "",
+            oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -99,7 +99,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

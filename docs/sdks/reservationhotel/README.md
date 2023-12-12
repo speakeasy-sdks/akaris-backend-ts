@@ -19,10 +19,10 @@ This full payload book request allows your to reference a hotel availability res
 import { AkarisBackend } from "akaris-backend";
 import { OrganizationTypeEnum } from "akaris-backend/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -122,27 +122,7 @@ import { OrganizationTypeEnum } from "akaris-backend/dist/sdk/models/shared";
               id: "2",
               shortName: "Aventure Inc",
               systemOfRecord: [
-                "[",
-                "\"",
-                "1",
-                "G",
-                "\"",
-                ",",
-                "\"",
-                "1",
-                "V",
-                "\"",
-                ",",
-                "\"",
-                "M",
-                "B",
-                "\"",
-                ",",
-                "\"",
-                "H",
-                "Z",
-                "\"",
-                "]",
+                "[\"1G\",\"1V\",\"MB\",\"HZ\"]",
               ],
             },
             profileName: [
@@ -168,7 +148,9 @@ import { OrganizationTypeEnum } from "akaris-backend/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -198,10 +180,10 @@ Cancel an Offer by modifying the Reservation
 ```typescript
 import { AkarisBackend } from "akaris-backend";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -212,7 +194,9 @@ import { AkarisBackend } from "akaris-backend";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -272,10 +256,10 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -354,16 +338,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -419,16 +394,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -442,16 +408,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -465,16 +422,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -580,14 +528,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                     programId: "United",
                     programName: "Mileage Plus",
                     shareWithSupplier: [
-                      "L",
-                      "H",
-                      " ",
-                      "N",
-                      "H",
-                      " ",
-                      "S",
-                      "Q",
+                      "LH NH SQ",
                     ],
                     supplier: "UA",
                     supplierType: "Airline",
@@ -721,16 +662,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               {
                 passengerTypeCode: "ADT",
                 uris: [
-                  "g",
-                  "o",
-                  "o",
-                  "g",
-                  "l",
-                  "e",
-                  ".",
-                  "c",
-                  "o",
-                  "m",
+                  "google.com",
                 ],
               },
             ],
@@ -886,14 +818,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                             programId: "United",
                             programName: "Mileage Plus",
                             shareWithSupplier: [
-                              "L",
-                              "H",
-                              " ",
-                              "N",
-                              "H",
-                              " ",
-                              "S",
-                              "Q",
+                              "LH NH SQ",
                             ],
                             supplier: "UA",
                             supplierType: "Airline",
@@ -968,27 +893,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             id: "2",
             shortName: "Aventure Inc",
             systemOfRecord: [
-              "[",
-              "\"",
-              "1",
-              "G",
-              "\"",
-              ",",
-              "\"",
-              "1",
-              "V",
-              "\"",
-              ",",
-              "\"",
-              "M",
-              "B",
-              "\"",
-              ",",
-              "\"",
-              "H",
-              "Z",
-              "\"",
-              "]",
+              "[\"1G\",\"1V\",\"MB\",\"HZ\"]",
             ],
           },
           profileName: [
@@ -1180,14 +1085,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                 programId: "United",
                 programName: "Mileage Plus",
                 shareWithSupplier: [
-                  "L",
-                  "H",
-                  " ",
-                  "N",
-                  "H",
-                  " ",
-                  "S",
-                  "Q",
+                  "LH NH SQ",
                 ],
                 supplier: "UA",
                 supplierType: "Airline",
@@ -1281,7 +1179,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1312,10 +1212,10 @@ Retrieve details about a held booking, or PNR. While a PNR refers to a held book
 import { AkarisBackend } from "akaris-backend";
 import { IdentifierTypeENUM } from "akaris-backend/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -1327,7 +1227,9 @@ import { IdentifierTypeENUM } from "akaris-backend/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1387,10 +1289,10 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
+async function run() {
   const sdk = new AkarisBackend({
     security: {
-      oAuth2: "",
+      oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
     },
   });
 
@@ -1470,16 +1372,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -1535,16 +1428,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -1558,16 +1442,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -1581,16 +1456,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                   {
                     passengerTypeCode: "ADT",
                     uris: [
-                      "g",
-                      "o",
-                      "o",
-                      "g",
-                      "l",
-                      "e",
-                      ".",
-                      "c",
-                      "o",
-                      "m",
+                      "google.com",
                     ],
                   },
                 ],
@@ -1696,14 +1562,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                     programId: "United",
                     programName: "Mileage Plus",
                     shareWithSupplier: [
-                      "L",
-                      "H",
-                      " ",
-                      "N",
-                      "H",
-                      " ",
-                      "S",
-                      "Q",
+                      "LH NH SQ",
                     ],
                     supplier: "UA",
                     supplierType: "Airline",
@@ -1837,16 +1696,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
               {
                 passengerTypeCode: "ADT",
                 uris: [
-                  "g",
-                  "o",
-                  "o",
-                  "g",
-                  "l",
-                  "e",
-                  ".",
-                  "c",
-                  "o",
-                  "m",
+                  "google.com",
                 ],
               },
             ],
@@ -2002,14 +1852,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                             programId: "United",
                             programName: "Mileage Plus",
                             shareWithSupplier: [
-                              "L",
-                              "H",
-                              " ",
-                              "N",
-                              "H",
-                              " ",
-                              "S",
-                              "Q",
+                              "LH NH SQ",
                             ],
                             supplier: "UA",
                             supplierType: "Airline",
@@ -2084,27 +1927,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
             id: "2",
             shortName: "Aventure Inc",
             systemOfRecord: [
-              "[",
-              "\"",
-              "1",
-              "G",
-              "\"",
-              ",",
-              "\"",
-              "1",
-              "V",
-              "\"",
-              ",",
-              "\"",
-              "M",
-              "B",
-              "\"",
-              ",",
-              "\"",
-              "H",
-              "Z",
-              "\"",
-              "]",
+              "[\"1G\",\"1V\",\"MB\",\"HZ\"]",
             ],
           },
           profileName: [
@@ -2296,14 +2119,7 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
                 programId: "United",
                 programName: "Mileage Plus",
                 shareWithSupplier: [
-                  "L",
-                  "H",
-                  " ",
-                  "N",
-                  "H",
-                  " ",
-                  "S",
-                  "Q",
+                  "LH NH SQ",
                 ],
                 supplier: "UA",
                 supplierType: "Airline",
@@ -2397,7 +2213,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

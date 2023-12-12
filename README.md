@@ -6,7 +6,7 @@
     
 </div>
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NPM
@@ -20,10 +20,11 @@ npm add https://github.com/speakeasy-sdks/akaris-backend-ts
 ```bash
 yarn add https://github.com/speakeasy-sdks/akaris-backend-ts
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```typescript
@@ -35,10 +36,10 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async () => {
+async function run() {
     const sdk = new AkarisBackend({
         security: {
-            oAuth2: "",
+            oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -126,14 +127,15 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [hotelAvailability](docs/sdks/hotelavailability/README.md)
 
@@ -165,25 +167,11 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
 
 * [createPrecision](docs/sdks/precisionsearchhotel/README.md#createprecision) - Precision Search hotels by property ID
 * [precisionSearchProperties](docs/sdks/precisionsearchhotel/README.md#precisionsearchproperties) - Search hotels by location
-<!-- End SDK Available Operations -->
-
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
-
-<!-- Start Pagination -->
-# Pagination
-
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned response object will have a `next` method that can be called to pull down the next group of results. If the
-return value of `next` is `null`, then there are no more pages to be fetched.
-
-Here's an example of one such pagination call:
-<!-- End Pagination -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
@@ -197,117 +185,125 @@ Example
 
 ```typescript
 import { AkarisBackend } from "akaris-backend";
-import { CurrencySourceEnum, DurationUnitEnum, RateCategoryEnum } from "akaris-backend/dist/sdk/models/shared";
+import {
+    CurrencySourceEnum,
+    DurationUnitEnum,
+    RateCategoryEnum,
+} from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async() => {
-  const sdk = new AkarisBackend({
-    security: {
-      oAuth2: "",
-    },
-  });
+async function run() {
+    const sdk = new AkarisBackend({
+        security: {
+            oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
+        },
+    });
 
-  
-  let res;
-  try {
-    res = await sdk.hotelAvailability.createHotelAvailability({
-    catalogOfferingsQueryRequestHospitalityWrapper: {
-      catalogOfferingsQueryRequest: {
-        atType: "CatalogOfferingsRequestHospitality",
-        catalogOfferingsRequest: [
-          {
-            atType: "CatalogOfferingsRequestHospitality",
-            hotelSearchCriterion: {
-              atType: "HotelSearchCriterion",
-              propertyRequest: [
-                {
-                  atType: "PropertyRequest",
-                  propertyKey: {
-                    chainCode: "HL",
-                    propertyCode: "string",
-                  },
-                },
-              ],
-              rateCandidates: {
-                atType: "RateCandidates",
-                rateCandidate: [
-                  {
-                    atType: "RateCandidate",
-                    chainCode: "HL",
-                    propertyCode: "HL12345",
-                    rateCode: "HL123",
-                  },
-                ],
-              },
-              roomStayCandidates: {
-                roomStayCandidate: [
-                  {
-                    guestCounts: {
-                      atType: "GuestCounts",
-                      guestCount: [
+    let res;
+    try {
+        res = await sdk.hotelAvailability.createHotelAvailability({
+            catalogOfferingsQueryRequestHospitalityWrapper: {
+                catalogOfferingsQueryRequest: {
+                    atType: "CatalogOfferingsRequestHospitality",
+                    catalogOfferingsRequest: [
                         {
-                          atType: "GuestCount",
-                          age: 21,
-                          ageQualifyingCode: "10",
-                          count: 2,
+                            atType: "CatalogOfferingsRequestHospitality",
+                            hotelSearchCriterion: {
+                                atType: "HotelSearchCriterion",
+                                propertyRequest: [
+                                    {
+                                        atType: "PropertyRequest",
+                                        propertyKey: {
+                                            chainCode: "HL",
+                                            propertyCode: "string",
+                                        },
+                                    },
+                                ],
+                                rateCandidates: {
+                                    atType: "RateCandidates",
+                                    rateCandidate: [
+                                        {
+                                            atType: "RateCandidate",
+                                            chainCode: "HL",
+                                            propertyCode: "HL12345",
+                                            rateCode: "HL123",
+                                        },
+                                    ],
+                                },
+                                roomStayCandidates: {
+                                    roomStayCandidate: [
+                                        {
+                                            guestCounts: {
+                                                atType: "GuestCounts",
+                                                guestCount: [
+                                                    {
+                                                        atType: "GuestCount",
+                                                        age: 21,
+                                                        ageQualifyingCode: "10",
+                                                        count: 2,
+                                                    },
+                                                ],
+                                            },
+                                            roomAmenity: [
+                                                {
+                                                    inclusion: ["string"],
+                                                    name: "24 hour Room Service",
+                                                    description: "WiFi",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            },
+                            maximumAmount: {
+                                approximateInd: true,
+                                code: "USD",
+                                minorUnit: 2,
+                                value: 124.56,
+                            },
+                            minimumAmount: {
+                                approximateInd: true,
+                                code: "USD",
+                                minorUnit: 2,
+                                value: 124.56,
+                            },
+                            searchControlConsoleChannelID: {
+                                value: "2",
+                            },
+                            stayDates: {
+                                duration: "P1D",
+                                end: new RFCDate("2023-03-03"),
+                                specific: new RFCDate("2023-03-03"),
+                                start: new RFCDate("2023-03-03"),
+                            },
                         },
-                      ],
-                    },
-                    roomAmenity: [
-                      {
-                        inclusion: [
-                          "string",
-                        ],
-                        name: "24 hour Room Service",
-                        description: "WiFi",
-                      },
                     ],
-                  },
-                ],
-              },
+                },
             },
-            maximumAmount: {
-              approximateInd: true,
-              code: "USD",
-              minorUnit: 2,
-              value: 124.56,
-            },
-            minimumAmount: {
-              approximateInd: true,
-              code: "USD",
-              minorUnit: 2,
-              value: 124.56,
-            },
-            searchControlConsoleChannelID: {
-              value: "2",
-            },
-            stayDates: {
-              duration: "P1D",
-              end: new RFCDate("2023-03-03"),
-              specific: new RFCDate("2023-03-03"),
-              start: new RFCDate("2023-03-03"),
-            },
-          },
-        ],
-      },
-    },
-  });
-  } catch (e) { 
-    if (e instanceof errors.BaseResponse) {
-      console.error(e) // handle exception 
-    
-  }
+        });
+    } catch (err) {
+        if (err instanceof errors.BaseResponse) {
+            console.error(err); // handle exception
+            throw err;
+        } else if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
 
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -330,11 +326,11 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async () => {
+async function run() {
     const sdk = new AkarisBackend({
         serverIdx: 1,
         security: {
-            oAuth2: "",
+            oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -422,7 +418,9 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -439,11 +437,11 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async () => {
+async function run() {
     const sdk = new AkarisBackend({
         serverURL: "https://api.pp.travelport.com/11/hotel",
         security: {
-            oAuth2: "",
+            oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -531,23 +529,25 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-from akaris-backend import AkarisBackend;
-import axios;
+import { akaris-backend } from "AkarisBackend";
+import axios from "axios";
 
 const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
@@ -555,11 +555,11 @@ const httpClient = axios.create({
 
 const sdk = new AkarisBackend({defaultClient: httpClient});
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
@@ -580,10 +580,10 @@ import {
 } from "akaris-backend/dist/sdk/models/shared";
 import { RFCDate } from "akaris-backend/dist/sdk/types";
 
-(async () => {
+async function run() {
     const sdk = new AkarisBackend({
         security: {
-            oAuth2: "",
+            oAuth2: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
         },
     });
 
@@ -671,10 +671,12 @@ import { RFCDate } from "akaris-backend/dist/sdk/types";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
