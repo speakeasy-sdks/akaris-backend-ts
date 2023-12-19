@@ -1,6 +1,6 @@
 {
   "name": "akaris-backend",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "author": "akaris-air",
   "scripts": {
     "prepare": "tsc --build",
