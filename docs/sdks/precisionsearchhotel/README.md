@@ -72,8 +72,8 @@ async function run() {
             },
           ],
         },
-        checkinDate: new RFCDate("2021-07-01"),
-        checkoutDate: new RFCDate("2023-04-22"),
+        checkinDate: new RFCDate("2022-07-01"),
+        checkoutDate: new RFCDate("2024-04-22"),
         numberOfGuests: 157281,
       },
     },
@@ -130,8 +130,8 @@ async function run() {
         chainCodes: [
           "string",
         ],
-        checkInDate: new RFCDate("2021-05-01"),
-        checkOutDate: new RFCDate("2022-01-18"),
+        checkInDate: new RFCDate("2022-05-01"),
+        checkOutDate: new RFCDate("2023-01-18"),
         mealsIncluded: {},
         propertyAmenityCode: [
           "string",
