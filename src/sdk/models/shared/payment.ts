@@ -17,7 +17,7 @@ import { Expose, Type } from "class-transformer";
 export class Payment extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "@type" })
-    atType?: string;
+    atType: string;
 
     @SpeakeasyMetadata({ elemType: AgencyServiceFeeIdentifier })
     @Expose({ name: "AgencyServiceFeeIdentifier" })

@@ -9,7 +9,7 @@ import { Expose, Type } from "class-transformer";
 export class ReservationDisplaySequence extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "@type" })
-    atType?: string;
+    atType: string;
 
     @SpeakeasyMetadata({ elemType: DisplaySequence })
     @Expose({ name: "DisplaySequence" })

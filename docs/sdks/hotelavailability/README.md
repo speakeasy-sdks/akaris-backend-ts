@@ -152,6 +152,7 @@ async function run() {
   const res = await sdk.hotelAvailability.hotelAvailabilityFromProperties({
     catalogOfferingsQueryBuildFromPropertiesWrapper: {
       catalogOfferingsQueryBuildFromProperties: {
+        atType: "string",
         buildFromCatalogOfferingHospitality: {
           propertInfoIds: [
             "ON-60106",

@@ -9,7 +9,7 @@ import { Expose, Type } from "class-transformer";
 export class CatalogOfferingsQueryBuildFromProperties extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "@type" })
-    atType?: string;
+    atType: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "BuildFromCatalogOfferingHospitality" })

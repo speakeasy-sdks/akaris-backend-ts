@@ -29,6 +29,7 @@ async function run() {
   const res = await sdk.reservationHotel.buildHotelReservation({
     reservationQueryBuildWrapper: {
       reservationQueryBuild: {
+        atType: "string",
         reservationBuild: {
           atType: "ReservationBuildFromCatalogOfferings",
           accounting: {
@@ -749,6 +750,7 @@ async function run() {
           },
         ],
         reservationDisplaySequence: {
+          atType: "string",
           displaySequence: [
             {
               offerRef: "string",
@@ -1783,6 +1785,7 @@ async function run() {
           },
         ],
         reservationDisplaySequence: {
+          atType: "string",
           displaySequence: [
             {
               offerRef: "string",
