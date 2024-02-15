@@ -186,7 +186,7 @@ async function run() {
         atType: "OfferQueryHospitalityRequest",
         propertyKey: {
           chainCode: "HL",
-          propertyCode: "string",
+          propertyCode: "<value>",
         },
         rateCandidate: {
           atType: "RateCandidate",
@@ -211,7 +211,7 @@ async function run() {
               roomAmenity: [
                 {
                   inclusion: [
-                    "string",
+                    "<value>",
                   ],
                   name: "24 hour Room Service",
                   description: "WiFi",

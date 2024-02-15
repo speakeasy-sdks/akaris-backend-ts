@@ -29,7 +29,7 @@ async function run() {
   const res = await sdk.reservationHotel.buildHotelReservation({
     reservationQueryBuildWrapper: {
       reservationQueryBuild: {
-        atType: "string",
+        atType: "<value>",
         reservationBuild: {
           atType: "ReservationBuildFromCatalogOfferings",
           accounting: {
@@ -86,7 +86,7 @@ async function run() {
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
             offerRef: [
-              "string",
+              "<value>",
             ],
             receiptRef: "6773 2389 2239 2832",
             segmentSequenceList: [
@@ -127,7 +127,7 @@ async function run() {
               ],
             },
             profileName: [
-              "string",
+              "<value>",
             ],
             travelOrganizationRef: "TravelAgency_1",
             id: "2",
@@ -189,7 +189,7 @@ async function run() {
   });
 
   const res = await sdk.reservationHotel.cancelHotelOffer({
-    reservationIdentifier: "string",
+    reservationIdentifier: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -389,7 +389,7 @@ async function run() {
               {
                 documentType: DocumentTypeEnum.Ticket,
                 restriction: [
-                  "string",
+                  "<value>",
                 ],
                 travelerIdentifierRef: [
                   {
@@ -403,8 +403,8 @@ async function run() {
             ],
             ticketDesignators: [
               {
-                atType: "string",
-                ticketDesignator: "string",
+                atType: "<value>",
+                ticketDesignator: "<value>",
                 travelerIdentifierRef: [
                   {
                     passengerTypeCode: "ADT",
@@ -710,7 +710,7 @@ async function run() {
             },
             contactInformationRefusedInd: true,
             shareWithSupplier: [
-              "string",
+              "<value>",
             ],
           },
         ],
@@ -722,7 +722,7 @@ async function run() {
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
             offerRef: [
-              "string",
+              "<value>",
             ],
             receiptRef: "6773 2389 2239 2832",
             id: "3493289238",
@@ -745,15 +745,15 @@ async function run() {
               },
             ],
             shareWithSupplier: [
-              "string",
+              "<value>",
             ],
           },
         ],
         reservationDisplaySequence: {
-          atType: "string",
+          atType: "<value>",
           displaySequence: [
             {
-              offerRef: "string",
+              offerRef: "<value>",
               sequence: 1,
               displaySequence: "1",
             },
@@ -899,7 +899,7 @@ async function run() {
             ],
           },
           profileName: [
-            "string",
+            "<value>",
           ],
           travelOrganizationRef: "TravelAgency_1",
           id: "2",
@@ -1222,7 +1222,7 @@ async function run() {
   });
 
   const res = await sdk.reservationHotel.retrieveHotelReservation({
-    identifier: "string",
+    identifier: "<value>",
     identifierType: IdentifierTypeENUM.Locator,
   });
 
@@ -1299,7 +1299,7 @@ async function run() {
   });
 
   const res = await sdk.reservationHotel.updateHotelReservation({
-    identifier: "string",
+    identifier: "<value>",
     reservationDetailWrapper: {
       reservationDetail: {
         atType: "Reservation",
@@ -1424,7 +1424,7 @@ async function run() {
               {
                 documentType: DocumentTypeEnum.Ticket,
                 restriction: [
-                  "string",
+                  "<value>",
                 ],
                 travelerIdentifierRef: [
                   {
@@ -1438,8 +1438,8 @@ async function run() {
             ],
             ticketDesignators: [
               {
-                atType: "string",
-                ticketDesignator: "string",
+                atType: "<value>",
+                ticketDesignator: "<value>",
                 travelerIdentifierRef: [
                   {
                     passengerTypeCode: "ADT",
@@ -1745,7 +1745,7 @@ async function run() {
             },
             contactInformationRefusedInd: true,
             shareWithSupplier: [
-              "string",
+              "<value>",
             ],
           },
         ],
@@ -1757,7 +1757,7 @@ async function run() {
               value: "A0656EFF-FAF4-456F-B061-0161008D7C4E",
             },
             offerRef: [
-              "string",
+              "<value>",
             ],
             receiptRef: "6773 2389 2239 2832",
             id: "3493289238",
@@ -1780,15 +1780,15 @@ async function run() {
               },
             ],
             shareWithSupplier: [
-              "string",
+              "<value>",
             ],
           },
         ],
         reservationDisplaySequence: {
-          atType: "string",
+          atType: "<value>",
           displaySequence: [
             {
-              offerRef: "string",
+              offerRef: "<value>",
               sequence: 1,
               displaySequence: "1",
             },
@@ -1934,7 +1934,7 @@ async function run() {
             ],
           },
           profileName: [
-            "string",
+            "<value>",
           ],
           travelOrganizationRef: "TravelAgency_1",
           id: "2",

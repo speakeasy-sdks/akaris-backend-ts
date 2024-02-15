@@ -4,15 +4,15 @@ management:
   docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
   docVersion: 11.11.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.6.2
-  configChecksum: c5f7860665e80ecae164f97a52f703fb
+  generationVersion: 2.258.0
+  releaseVersion: 0.6.3
+  configChecksum: 31f693c62613a2f886996201c5e993c5
   repoURL: https://github.com/speakeasy-sdks/akaris-backend-ts.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/akaris-backend-ts
 features:
   typescript:
-    core: 3.4.1
+    core: 3.4.7
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
 generatedFiles:

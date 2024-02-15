@@ -29,7 +29,7 @@ async function run() {
                                     atType: "PropertyRequest",
                                     propertyKey: {
                                         chainCode: "HL",
-                                        propertyCode: "string",
+                                        propertyCode: "<value>",
                                     },
                                 },
                             ],
@@ -60,7 +60,7 @@ async function run() {
                                         },
                                         roomAmenity: [
                                             {
-                                                inclusion: ["string"],
+                                                inclusion: ["<value>"],
                                                 name: "24 hour Room Service",
                                                 description: "WiFi",
                                             },

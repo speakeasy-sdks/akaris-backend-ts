@@ -38,7 +38,7 @@ async function run() {
                   atType: "PropertyRequest",
                   propertyKey: {
                     chainCode: "HL",
-                    propertyCode: "string",
+                    propertyCode: "<value>",
                   },
                 },
               ],
@@ -70,7 +70,7 @@ async function run() {
                     roomAmenity: [
                       {
                         inclusion: [
-                          "string",
+                          "<value>",
                         ],
                         name: "24 hour Room Service",
                         description: "WiFi",
@@ -152,7 +152,7 @@ async function run() {
   const res = await sdk.hotelAvailability.hotelAvailabilityFromProperties({
     catalogOfferingsQueryBuildFromPropertiesWrapper: {
       catalogOfferingsQueryBuildFromProperties: {
-        atType: "string",
+        atType: "<value>",
         buildFromCatalogOfferingHospitality: {
           propertInfoIds: [
             "ON-60106",

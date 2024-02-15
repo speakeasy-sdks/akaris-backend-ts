@@ -33,7 +33,7 @@ async function run() {
         propertyKey: [
           {
             chainCode: "HL",
-            propertyCode: "string",
+            propertyCode: "<value>",
           },
         ],
         rateCandidates: {
@@ -64,7 +64,7 @@ async function run() {
               roomAmenity: [
                 {
                   inclusion: [
-                    "string",
+                    "<value>",
                   ],
                   name: "24 hour Room Service",
                   description: "WiFi",
@@ -124,8 +124,8 @@ async function run() {
   });
 
   const res = await sdk.searchHotel.getPropertiesDetail({
-    chainCode: "string",
-    propertyCode: "string",
+    chainCode: "<value>",
+    propertyCode: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -171,8 +171,8 @@ async function run() {
   });
 
   const res = await sdk.searchHotel.getPropertiesPage({
-    identifier: "string",
-    pageNumber: "string",
+    identifier: "<value>",
+    pageNumber: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -224,12 +224,12 @@ async function run() {
       propertiesQuerySearch: {
         atType: "PropertiesQuerySearch",
         chainCodes: [
-          "string",
+          "<value>",
         ],
         checkInDate: new RFCDate("2023-11-19"),
         checkOutDate: new RFCDate("2023-10-26"),
         propertyAmenityCode: [
-          "string",
+          "<value>",
         ],
         rateCandidates: {
           atType: "RateCandidates",
@@ -258,7 +258,7 @@ async function run() {
             roomAmenity: [
               {
                 inclusion: [
-                  "string",
+                  "<value>",
                 ],
                 name: "24 hour Room Service",
                 description: "WiFi",

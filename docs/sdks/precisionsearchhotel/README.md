@@ -32,7 +32,7 @@ async function run() {
         propertyKey: [
           {
             chainCode: "HL",
-            propertyCode: "string",
+            propertyCode: "<value>",
           },
         ],
         rateCandidates: {
@@ -63,7 +63,7 @@ async function run() {
               roomAmenity: [
                 {
                   inclusion: [
-                    "string",
+                    "<value>",
                   ],
                   name: "24 hour Room Service",
                   description: "WiFi",
@@ -128,13 +128,13 @@ async function run() {
       propertiesQuerySearch: {
         atType: "PropertiesQuerySearch",
         chainCodes: [
-          "string",
+          "<value>",
         ],
         checkInDate: new RFCDate("2022-05-01"),
         checkOutDate: new RFCDate("2023-01-18"),
         mealsIncluded: {},
         propertyAmenityCode: [
-          "string",
+          "<value>",
         ],
         rateCandidates: {
           atType: "RateCandidates",
@@ -163,7 +163,7 @@ async function run() {
             roomAmenity: [
               {
                 inclusion: [
-                  "string",
+                  "<value>",
                 ],
                 name: "24 hour Room Service",
                 description: "WiFi",
