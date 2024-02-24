@@ -7,8 +7,10 @@ generation:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
 typescript:
-  version: 0.6.3
+  version: 0.6.4
   author: akaris-air
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
