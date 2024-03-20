@@ -3,17 +3,17 @@ id: 663b59eb-f072-4d8f-ac56-5e3648d7c3eb
 management:
   docChecksum: 998f6552c41b6b3b7ff66d3f2d784f6a
   docVersion: 11.11.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 0.6.6
-  configChecksum: 009263347db7a932d17104a8a3861e98
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.6.7
+  configChecksum: 319aa7893e988e114572deccd7a5e7ee
   repoURL: https://github.com/speakeasy-sdks/akaris-backend-ts.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/akaris-backend-ts
 features:
   typescript:
     core: 3.4.8
-    globalSecurity: 2.82.4
+    globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
 generatedFiles:
   - src/sdk/hotelavailability.ts
